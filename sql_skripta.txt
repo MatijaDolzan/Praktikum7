@@ -1,19 +1,18 @@
-create database praktikum;
 CREATE TABLE Uporabnik(
-    id int PRIMARY KEY NOT NULL,
+    id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username varchar(255) NOT NULL,
     email varchar(255) NOT NULL,
     password varchar(255)
   
 );
 CREATE TABLE Privolitve(
-	id int PRIMARY KEY NOT NULL,
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	naslov varchar(255) NOT NULL,
 	FK_pod_priv int NOT NULL
   
 );
 CREATE TABLE Upravljalec(	
-	id int PRIMARY KEY NOT NULL,
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	ime varchar(255) NOT NULL,
 	priimek varchar(255) NOT NULL,
 	naslov varchar(255) NOT NULL,
@@ -21,7 +20,7 @@ CREATE TABLE Upravljalec(
   
 );
 CREATE TABLE Verzija(
-	id int PRIMARY KEY NOT NULL,
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT ,
 	verzija int NOT NULL,
 	text text(65535) NOT NULL,
 	naslov varchar(255) NOT NULL,
@@ -32,9 +31,11 @@ CREATE TABLE Verzija(
   
 );
 CREATE TABLE Podpisnik(
-	id int PRIMARY KEY NOT NULL,
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	email varchar(255) NOT NULL,
 	ip_add varchar(255) NOT NULL,
 	cas DATETIME NOT NULL,
 	FK_up_priv int NOT NULL
 );
+
+
