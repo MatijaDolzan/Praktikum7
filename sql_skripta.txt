@@ -8,7 +8,7 @@ CREATE TABLE Uporabnik(
 CREATE TABLE Privolitve(
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	naslov varchar(255) NOT NULL,
-	FK_pod_priv int NOT NULL
+	FK_upo_priv int NOT NULL
   
 );
 CREATE TABLE Upravljalec(	
@@ -26,8 +26,7 @@ CREATE TABLE Verzija(
 	naslov varchar(255) NOT NULL,
  	rok_hrambe DATE NOT NULL,
 	pooblascenec varchar(255),
-	FK_pod_priv int NOT NULL,
-	FK_verzija int NOT NULL
+	FK_priv_ver int NOT NULL,
   
 );
 CREATE TABLE Podpisnik(
@@ -35,7 +34,7 @@ CREATE TABLE Podpisnik(
 	email varchar(255) NOT NULL,
 	ip_add varchar(255) NOT NULL,
 	cas DATETIME NOT NULL,
-	FK_up_priv int NOT NULL
+	FK_pod_ver int NOT NULL
 );
 
-
+INSERT INTO `uporabnik` (`id`, `username`, `email`, `password`) VALUES (NULL, 'admin', 'admin', 'admin');
