@@ -1,11 +1,12 @@
 <?php
 
-
 if(isset($_POST['submit'])){
 header("Location: http://localhost/Praktikum_II/index.php");
 exit;
 }
 ?>
+
+<h1>Naslovna stran</h1>
 
 <form action="prijava.php" method="post">
 Prijava<br>

@@ -5,17 +5,18 @@ if(isset($_POST['submit'])){
     exit;
 }
 ?>
-<h2>Prijava</h2>
+<h2>Registracija</h2>
 
-<form action="handler.php" method="post">
+<form action="index.php" method="post">
+Ime:
+<input type='text' name='username' /><br>
+Priimek:
+<input type='text' name='email' /><br>
 Uporabnisko ime:
 <input type='text' name='username' /><br>
 E-mail naslov:
 <input type='text' name='email' /><br>
 
-<input type='submit' name='submit' value='Prijava' class='login' />
+<input type='submit' name='submit' value='Registriraj' class='login' />
 </form>
 
-
-
-?>
