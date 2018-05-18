@@ -1,0 +1,40 @@
+create database praktikum;
+CREATE TABLE Uporabnik(
+    id int PRIMARY KEY NOT NULL,
+    username varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    password varchar(255) NOT NULL
+  
+);
+CREATE TABLE Privolitve(
+	id int PRIMARY KEY NOT NULL,
+	naslov varchar(255) NOT NULL,
+	FK_pod_priv int NOT NULL
+  
+);
+CREATE TABLE Upravljalec(	
+	id int PRIMARY KEY NOT NULL,
+	ime varchar(255) NOT NULL,
+	priimek varchar(255) NOT NULL,
+	naslov varchar(255) NOT NULL,
+	FK_upr_priv int NOT NULL
+  
+);
+CREATE TABLE Verzija(
+	id int PRIMARY KEY NOT NULL,
+	verzija int NOT NULL,
+	text text(65535) NOT NULL,
+	naslov varchar(255) NOT NULL,
+ 	rok_hrambe DATE NOT NULL,
+	pooblascenec varchar(255),
+	FK_pod_priv int NOT NULL,
+	FK_verzija int NOT NULL
+  
+);
+CREATE TABLE Podpisnik(
+	id int PRIMARY KEY NOT NULL,
+	email varchar(255) NOT NULL,
+	ip_add varchar(255) NOT NULL,
+	cas DATETIME NOT NULL,
+	FK_up_priv int NOT NULL
+);
