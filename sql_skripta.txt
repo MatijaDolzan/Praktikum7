@@ -26,7 +26,7 @@ CREATE TABLE Verzija(
 	naslov varchar(255) NOT NULL,
  	rok_hrambe DATE NOT NULL,
 	pooblascenec varchar(255),
-	FK_priv_ver int NOT NULL,
+	FK_priv_ver int NOT NULL
   
 );
 CREATE TABLE Podpisnik(
