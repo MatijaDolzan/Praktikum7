@@ -8,10 +8,6 @@ if(isset($_POST['submit'])){
 <h2>Registracija</h2>
 
 <form action="index.php" method="post">
-Ime:
-<input type='text' name='username' /><br>
-Priimek:
-<input type='text' name='email' /><br>
 Uporabnisko ime:
 <input type='text' name='username' /><br>
 E-mail naslov:
