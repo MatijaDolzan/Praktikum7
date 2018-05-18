@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
 ?>
 <h2>Prijava</h2>
 
-<form action="handler.php" method="post">
+<form action="index.php" method="post">
 Uporabnisko ime:
 <input type='text' name='username' /><br>
 E-mail naslov:
