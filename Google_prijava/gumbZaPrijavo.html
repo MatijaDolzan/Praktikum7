@@ -1,0 +1,16 @@
+<html>
+<head>
+  <meta name="google-signin-client_id" content="327486185884-703l1hadrq1m3fjkv45in94pu6ll09br.apps.googleusercontent.com">
+</head>
+<!-- [START body] -->
+<body>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Signed in as: ' + googleUser.getBasicProfile().getName());
+    }
+  </script>
+  <div class="g-signin2" data-onsuccess="onSuccess"></div>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</body>
+<!-- [END body] -->
+</html>
