@@ -10,7 +10,7 @@ $conn = new mysqli($servername, $username, $password);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-//<br>$conn->close(); is necessary when including this file!!!
-
+echo "Connected successfully";
+echo '<br>$conn->close(); is necessary when including this file!!!';
+$conn->close();
 ?> 
