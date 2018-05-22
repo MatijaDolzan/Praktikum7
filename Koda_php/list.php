@@ -57,6 +57,7 @@ tr:nth-child(even) {
   <li><a class="active" href="index.php">Domov</a></li>
   <li><a href="dodaj_privloitev.php">Dodaj privolitev</a></li> 
   <li><a href="list.php">Seznam</a></li>
+  <li><a href="dodajanje_upravljalcev.php">Dodaj upravljalca</a></li>    
   <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
   <li><a href="login.php" class='login'>Prijava</a></li>
   <li><a href="register.php">Registracija</a></li>
@@ -78,6 +79,35 @@ tr:nth-child(even) {
     <td>Germany</td>
     <td>Germany</td>
   </tr>
- 
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+    <td>Germany</td>    
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+    <td>Germany</td>    
+  </tr>
 </table>
 

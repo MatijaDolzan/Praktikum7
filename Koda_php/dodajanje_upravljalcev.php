@@ -1,8 +1,5 @@
 <?php
-if(isset($_SESSION['current_user'])){
-    header("Location: index.php");
-    exit;
-}
+
 ?>
 
 <style>
@@ -37,10 +34,28 @@ li a:hover {
 
 </style>
 
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
 <center><h1><i>Podjetje d.o.o.</i></h1></center>
 <ul>
   <li><a class="active" href="index.php">Domov</a></li>
-  <li><a href="dodaj_privloitev.php">Dodaj privolitev</a></li>
+  <li><a href="dodaj_privloitev.php">Dodaj privolitev</a></li> 
   <li><a href="list.php">Seznam</a></li>
   <li><a href="dodajanje_upravljalcev.php">Dodaj upravljalca</a></li>    
   <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
@@ -49,25 +64,6 @@ li a:hover {
   <li><a href="logout.php">Odjava</a></li>
 </ul>
 
+<center><h2>Seznam upravljalcev</h2></center>
 
-<center><h2>Registracija</h2>
 
-<form action="register_worker.php" method="post">
-   <p> Uporabnisko ime:
-    <input type='text' name='username' /><br>
-   <p> Geslo:
-    <input type='password' name='password' /><br>
-   <p> E-mail:
-    <input type='text' name='email' /><br>
-
-	<p><input type='submit' name='submit' value='Potrdi' class='login' />
-</form>
-
-</center>
-
-<?php if(isset($_SESSION['register_error'])){
-?>
-<script>alert(<?php echo $_SESSION['register_error'];?>);</script>
-<?php 
-}
-?>
