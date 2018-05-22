@@ -8,15 +8,15 @@ CREATE TABLE Uporabnik(
 CREATE TABLE Privolitve(
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	naslov varchar(255) NOT NULL,
-	FK_priv_upo int NOT NULL,
-	FK_priv_upr int NOT NULL
+	FK_priv_upo int NOT NULL
   
 );
 CREATE TABLE Upravljalec(	
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	ime varchar(255) NOT NULL,
 	priimek varchar(255) NOT NULL,
-	naslov varchar(255) NOT NULL
+	naslov varchar(255) NOT NULL,
+	FK_upr_priv int
   
 );
 CREATE TABLE Verzija(
@@ -45,7 +45,7 @@ CREATE TABLE Pooblascenec(
 
 INSERT INTO `uporabnik` (`id`, `username`, `email`, `password`) VALUES (NULL, 'admin', 'admin', 'admin');
 INSERT INTO `podpisnik` (`id`, `email`, `ip_add`, `cas`, `FK_pod_ver`) VALUES (NULL, 'admin', '000.000.0.0', '2018-05-18 06:00:00', '1');
-INSERT INTO `privolitve` (`id`, `naslov`, `FK_priv_upo`, `FK_priv_upr`) VALUES (NULL, 'Privolitev 1', '1','1');
-INSERT INTO `upravljalec` (`id`, `ime`, `priimek`, `naslov`) VALUES (NULL, 'matija', 'dolzan', 'feri');
+INSERT INTO `privolitve` (`id`, `naslov`, `FK_priv_upo`) VALUES (NULL, 'Privolitev 1', '1');
+INSERT INTO `upravljalec` (`id`, `ime`, `priimek`, `naslov`,`FK_upr_priv`) VALUES (NULL, 'matija', 'dolzan', 'feri','1');
 INSERT INTO `verzija` (`id`, `verzija`, `text`, `rok_hrambe`, `FK_ver_priv`,`FK_ver_poob`) VALUES (NULL, '1', 'To je prva verzija privolitve 1.', '2018-06-21', '1', '1');
 INSERT INTO `pooblascenec`(`id`, `ime`, `priimek`, `naslov`) VALUES (NULL, 'laura', 'ekart', 'feri');
