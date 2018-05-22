@@ -16,7 +16,7 @@ CREATE TABLE Upravljalec(
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	ime varchar(255) NOT NULL,
 	priimek varchar(255) NOT NULL,
-	naslov varchar(255) NOT NULL,
+	naslov varchar(255) NOT NULL
   
 );
 CREATE TABLE Verzija(
