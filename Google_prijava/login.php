@@ -25,6 +25,8 @@ $loginURL = $gClient->createAuthUrl();
 			
 				<h1>PRIJAVA</h1>
 				
+				<!-- <img src="images/logo.png"><br><br> -->
+				
                 <form >
                     <input placeholder="Email..." name="email" class="form-control"><br>
                     <input type="password" placeholder="Geslo..." name="password" class="form-control"><br>
