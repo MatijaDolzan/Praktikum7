@@ -1,8 +1,5 @@
 <?php
-if(isset($_SESSION['current_user'])){
-    header("Location: index.php");
-    exit;
-}
+
 ?>
 
 <style>
@@ -37,10 +34,28 @@ li a:hover {
 
 </style>
 
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
 <center><h1><i>Podjetje d.o.o.</i></h1></center>
 <ul>
   <li><a class="active" href="index.php">Domov</a></li>
-  <li><a href="dodaj_privloitev.php">Dodaj privolitev</a></li>
+  <li><a href="dodaj_privloitev.php">Dodaj privolitev</a></li> 
   <li><a href="list.php">Seznam</a></li>
   <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
   <li><a href="login.php" class='login'>Prijava</a></li>
@@ -48,24 +63,21 @@ li a:hover {
   <li><a href="logout.php">Odjava</a></li>
 </ul>
 
+<center><h2>Seznam privolitev</h2></center>
 
-<center><h2>Prijava</h2>
-
-<form action="login_worker.php" method="post">
-  	<p> E-mail:
-    <input type='text' name='email' /><br>
-   <p> Geslo:
-    <input type='password' name='password' /><br>
-    
-   <p> <input type='submit' name='submit' value='Potrdi' class='login' />
-</form>
-
-</center>
-
-<?php if(isset($_SESSION['login_error'])){
-?>
-<script>alert(<?php echo $_SESSION['login_error'];?>);</script>
-<?php 
-}
-?>
+<table>
+  <tr>
+    <th>Privolitev - naslov</th>
+    <th>Verzija</th>
+    <th>Datum hrambe</th>
+    <th>Besedilo</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+    <td>Germany</td>
+  </tr>
+ 
+</table>
 
