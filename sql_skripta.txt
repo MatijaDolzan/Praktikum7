@@ -45,7 +45,7 @@ CREATE TABLE Pooblascenec(
 
 INSERT INTO `uporabnik` (`id`, `username`, `email`, `password`) VALUES (NULL, 'admin', 'admin', 'admin');
 INSERT INTO `podpisnik` (`id`, `email`, `ip_add`, `cas`, `FK_pod_ver`) VALUES (NULL, 'admin', '000.000.0.0', '2018-05-18 06:00:00', '1');
-INSERT INTO `privolitve` (`id`, `naslov`, `FK_upo_priv`,`FK_priv_upr`) VALUES (NULL, 'Privolitev 1', '1','1');
+INSERT INTO `privolitve` (`id`, `naslov`, `FK_priv_upo`, `FK_priv_upr`) VALUES (NULL, 'Privolitev 1', '1','1');
 INSERT INTO `upravljalec` (`id`, `ime`, `priimek`, `naslov`) VALUES (NULL, 'matija', 'dolzan', 'feri');
 INSERT INTO `verzija` (`id`, `verzija`, `text`, `rok_hrambe`, `FK_ver_priv`,`FK_ver_poob`) VALUES (NULL, '1', 'To je prva verzija privolitve 1.', '2018-06-21', '1', '1');
 INSERT INTO `pooblascenec`(`id`, `ime`, `priimek`, `naslov`) VALUES (NULL, 'laura', 'ekart', 'feri');
