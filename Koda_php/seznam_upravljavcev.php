@@ -64,7 +64,7 @@ tr:nth-child(even) {
   <li><a href="logout.php">Odjava</a></li>
 </ul>
 
-<center><h2>Seznam privolitev</h2></center>
+<center><h2>Seznam upravljavcev</h2></center>
 
 <?php
 
@@ -105,7 +105,7 @@ for ($j = 0 ; $j < $st_vrstic ; ++$j)
 
 <?php
 
-$query = "SELECT * FROM privolitve";
+$query = "SELECT * FROM Upravljalec";
 $result = mysqli_query($db_server, $query);
 
 if (!$result)
@@ -133,10 +133,16 @@ for ($j = 0 ; $j < $st_vrstic ; ++$j)
 <p>	
 <table>
   <tr>
-    <th>Privolitev - naslov</th>
+    <!--<th>Privolitev - naslov</th>
     <th>Besedilo</th>
     <th>Datum hrambe</th>
+    <th>Verzija</th> -->
+	
+	<th>Ime upravljalca</th>
+    <th>Priimek</th>
+    <th>Naslov</th>
     <th>Verzija</th>
+	
   </tr>
   <tr>
     <td><?php echo $vrsta[1] ?></td>
