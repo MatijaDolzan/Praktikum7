@@ -66,48 +66,86 @@ tr:nth-child(even) {
 
 <center><h2>Seznam privolitev</h2></center>
 
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "praktikum";
+  
+$db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
+
+?>
+	
+<?php
+
+$query = "SELECT * FROM verzija";
+$result = mysqli_query($db_server, $query);
+
+if (!$result)
+{
+	die ("Dostop do PB ni uspel");
+}
+else
+{
+	$st_vrstic = mysqli_num_rows($result);
+	if($st_vrstic > 0) 
+		print('');
+}
+
+for ($j = 0 ; $j < $st_vrstic ; ++$j)
+{
+	$vrstica = mysqli_fetch_row($result); ?>
+	
+	<?php
+}
+  
+ 
+?>	
+
+<?php
+
+$query = "SELECT * FROM privolitve";
+$result = mysqli_query($db_server, $query);
+
+if (!$result)
+{
+	die ("Dostop do PB ni uspel");
+}
+else
+{
+	$st_vrstic = mysqli_num_rows($result);
+	if($st_vrstic > 0) 
+		print('');
+}
+
+for ($j = 0 ; $j < $st_vrstic ; ++$j)
+{
+	$vrsta = mysqli_fetch_row($result); ?>
+	
+	<?php
+}
+  
+ 
+?>	
+
+
+<p>	
 <table>
   <tr>
     <th>Privolitev - naslov</th>
-    <th>Verzija</th>
-    <th>Datum hrambe</th>
     <th>Besedilo</th>
+    <th>Datum hrambe</th>
+    <th>Verzija</th>
   </tr>
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-    <td>Germany</td>    
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-    <td>Germany</td>    
+    <td><?php echo $vrsta[1] ?></td>
+    <td><?php echo $vrstica[2] ?></td>
+    <td><?php echo $vrstica[3] ?></td>
+    <td><?php echo $vrstica[4] ?></td>
   </tr>
 </table>
 
+
+
+  
