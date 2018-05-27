@@ -1,8 +1,5 @@
 <?php
 interface Iprivolitev  {
-    
-
-    
 
     public function addBaza($privolitev);
     

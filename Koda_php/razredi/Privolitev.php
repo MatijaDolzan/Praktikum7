@@ -5,10 +5,10 @@ class Privolitev implements Iprivolitev {
     private $naslov;
     private $upor;
     
-    function Privolitev($naslov,$upor) {
+    function Privolitev($naslov) {
         $this->id = NULL;
         $this->naslov=$naslov;
-        $this->upor=$upor;
+        $this->upor=NULL;
     }
     public function setNaslov($naslov){
         $this->naslov = $naslov;
@@ -20,15 +20,25 @@ class Privolitev implements Iprivolitev {
     public function getUpor(){
         return $this->upor;
     }
+    public function getId(){
+        return $this->id;
+    }
+    public function setId($id){
+        $this->id = $id;
+    }
+    public function setUpor($upor){
+        $this->upor = $upor;
+    }
+   
 
     public function getIzBaze($privolitev){
-        $isci->$privolitev($naslov);
+        $isci=$privolitev->naslov;
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "praktikum";
         $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
-        $query = "SELECT * FROM privolitev where naslov='$isci'";
+        $query = "SELECT * FROM privolitve where naslov='$isci';";
         $result = mysqli_query($db_server, $query);
         if (!$result)
         {
@@ -39,10 +49,13 @@ class Privolitev implements Iprivolitev {
             $st_vrstic = mysqli_num_rows($result);
             if($st_vrstic > 0){
                 $vrstica = mysqli_fetch_row($result);
-                $staraPriv=new Privolitev($naslov);
-                $staraPriv->__set($upor, $vrstica[2]);
+                $staraPriv=new Privolitev($isci);
+                $staraPriv->setId($vrstica[0]);
+                $staraPriv->setUpor($vrstica[2]);
+                return $staraPriv;
             }
         }
+
         
     }
 

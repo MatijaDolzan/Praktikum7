@@ -1,4 +1,5 @@
 <?php
-
-echo 'hope';
+session_start();
+$id=$_SESSION['idPrivolitve'];
+echo "$id";
 ?>
