@@ -1,10 +1,10 @@
 <?php
+session_start();
 if(isset($_SESSION['current_user'])){
     header("Location: index.php");
     exit;
 }
 ?>
-
 <style>
 ul {
     list-style-type: none;
@@ -51,9 +51,11 @@ li a:hover {
 
 
 <center><h2>Prijava</h2>
+<h2>Login</h2>
 
 <form action="login_worker.php" method="post">
-  	<p> E-mail:
+
+	<p> E-mail:
     <input type='text' name='email' /><br>
    <p> Geslo:
     <input type='password' name='password' /><br>
@@ -65,8 +67,7 @@ li a:hover {
 
 <?php if(isset($_SESSION['login_error'])){
 ?>
-<script>alert(<?php echo $_SESSION['login_error'];?>);</script>
+<script>alert('<?php echo $_SESSION['login_error'];?>');</script>
 <?php 
 }
 ?>
-

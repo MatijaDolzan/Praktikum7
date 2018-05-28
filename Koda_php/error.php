@@ -1,4 +1,5 @@
 <?php
+session_start();
 if((isset($_SESSION['error']))){
 ?>
 <h1>ERROR PAGE</h1>

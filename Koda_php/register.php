@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_SESSION['current_user'])){
     header("Location: index.php");
     exit;
@@ -49,10 +50,9 @@ li a:hover {
   <li><a href="logout.php">Odjava</a></li>
 </ul>
 
-
 <center><h2>Registracija</h2>
 
-<form action="register_worker.php" method="post">
+<form action="register_worker_check.php" method="post">
    <p> Uporabnisko ime:
     <input type='text' name='username' /><br>
    <p> Geslo:
@@ -62,7 +62,6 @@ li a:hover {
 
 	<p><input type='submit' name='submit' value='Potrdi' class='login' />
 </form>
-
 </center>
 
 <?php if(isset($_SESSION['register_error'])){
