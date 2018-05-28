@@ -12,4 +12,4 @@ if(isset($_SESSION['current_user']) && isset($_POST['dodajPriv'])){
     $id=$return->getId();
     $_SESSION['idPrivolitve']=$id;
 }
-header("Location: ../succes.php");
+header("Location: ../dodajanjeVerzije.php");

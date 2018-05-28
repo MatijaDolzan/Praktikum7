@@ -55,8 +55,27 @@ class Privolitev implements Iprivolitev {
                 return $staraPriv;
             }
         }
-
+        for ($j = 0 ; $j < $st_vrstic ; ++$j)
+        {
+            $vrstica = mysqli_fetch_row($result);
+            
+        }
+        if (!$result)
+        {
+            die ("Dostop do PB ni uspel");
+        }
+        else
+        {
+            $st_vrstic = mysqli_num_rows($result);
+            if($st_vrstic > 0)
+                print('');
+        }
         
+        for ($j = 0 ; $j < $st_vrstic ; ++$j)
+        {
+            $vrstica = mysqli_fetch_row($result); 
+
+        }
     }
 
     public function getIzBazeVse(){
