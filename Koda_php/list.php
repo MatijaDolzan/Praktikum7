@@ -142,7 +142,7 @@ for ($j = 0 ; $j < $st_vrstic ; ++$j)
     <td><?php echo $vrsta[1] ?></td>
     <td><?php echo $vrstica[2] ?></td>
     <td><?php echo $vrstica[3] ?></td>
-    <td><?php echo $vrstica[4] ?></td>
+    <td><?php echo $vrstica[1] ?></td>
   </tr>
 </table>
 
