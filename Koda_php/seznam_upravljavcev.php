@@ -57,7 +57,7 @@ tr:nth-child(even) {
   <li><a class="active" href="index.php">Domov</a></li>
   <li><a href="dodaj_privloitev.php">Dodaj privolitev</a></li> 
   <li><a href="list.php">Seznam</a></li>
-  <li><a href="dodajanje_upravljalcev.php">Dodaj upravljalca</a></li>    
+  <li><a href="seznam_upravljavcev.php">Upravljalci</a></li>  
   <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
   <li><a href="login.php" class='login'>Prijava</a></li>
   <li><a href="register.php">Registracija</a></li>
@@ -146,9 +146,9 @@ for ($j = 0 ; $j < $st_vrstic ; ++$j)
   </tr>
   <tr>
     <td><?php echo $vrsta[1] ?></td>
-    <td><?php echo $vrstica[2] ?></td>
-    <td><?php echo $vrstica[3] ?></td>
-    <td><?php echo $vrstica[4] ?></td>
+    <td><?php echo $vrsta[2] ?></td>
+    <td><?php echo $vrsta[3] ?></td>
+    <td><?php echo $vrstica[1] ?></td>
   </tr>
 </table>
 

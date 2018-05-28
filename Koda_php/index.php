@@ -49,9 +49,9 @@ li a:hover {
 <center><h1><i>Podjetje d.o.o.</i></h1></center>
 <ul>
   <li><a class="active" href="index.php">Domov</a></li>
-  <li><a href="dodaj_privloitev.php">Dodaj privolitev</a></li>
+  <li><a href="dodajanjePrivolitve.php">Dodaj privolitev</a></li>
   <li><a href="list.php">Seznam</a></li>
-  <li><a href="dodajanje_upravljalcev.php">Dodaj upravljalca</a></li>  
+  <li><a href="seznam_upravljavcev.php">Upravljalci</a></li>  
   <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
   <li><a href="login.php" class='login'>Prijava</a></li>
   <li><a href="register.php">Registracija</a></li>
