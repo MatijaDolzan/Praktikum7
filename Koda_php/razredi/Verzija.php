@@ -10,7 +10,7 @@ class Verzija implements Iprivolitev {
         $this->id = NULL;
         $this->text=$text;
         $this->hramba=$hramba;
-        $this->verzija=2;
+        $this->verzija=1;
         $this->FK_ver_priv=null;
     }
     
