@@ -57,7 +57,7 @@ tr:nth-child(even) {
   <li><a class="active" href="index.php">Domov</a></li>
   <li><a href="dodaj_privloitev.php">Dodaj privolitev</a></li> 
   <li><a href="list.php">Seznam</a></li>
-  <li><a href="seznam_upravljavcev.php">Upravljalci</a></li>  
+  <li><a href="dodajanje_upravljalcev.php">Dodaj upravljalca</a></li>    
   <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
   <li><a href="login.php" class='login'>Prijava</a></li>
   <li><a href="register.php">Registracija</a></li>
@@ -75,77 +75,51 @@ $dbname = "praktikum";
   
 $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
 
+
+
+$query = "select * from privolitve,verzija where verzija.FK_ver_priv=privolitve.id ";
+$result = mysqli_query($db_server, $query);
+
+if (!$result)
+{
+	die ("Dostop do PB ni uspel");
+}
+else
+{
+	$st_vrstic = mysqli_num_rows($result);
+	if($st_vrstic > 0) 
+		print('');
+}
+
 ?>
-	
-<?php
-
-$query = "SELECT * FROM verzija";
-$result = mysqli_query($db_server, $query);
-
-if (!$result)
-{
-	die ("Dostop do PB ni uspel");
-}
-else
-{
-	$st_vrstic = mysqli_num_rows($result);
-	if($st_vrstic > 0) 
-		print('');
-}
-
-for ($j = 0 ; $j < $st_vrstic ; ++$j)
-{
-	$vrstica = mysqli_fetch_row($result); ?>
-	
-	<?php
-}
-  
- 
-?>	
-
-<?php
-
-$query = "SELECT * FROM privolitve";
-$result = mysqli_query($db_server, $query);
-
-if (!$result)
-{
-	die ("Dostop do PB ni uspel");
-}
-else
-{
-	$st_vrstic = mysqli_num_rows($result);
-	if($st_vrstic > 0) 
-		print('');
-}
-
-for ($j = 0 ; $j < $st_vrstic ; ++$j)
-{
-	$vrsta = mysqli_fetch_row($result); ?>
-	
-	<?php
-}
-  
- 
-?>	
-
-
 <p>	
 <table>
   <tr>
     <th>Privolitev - naslov</th>
     <th>Besedilo</th>
-    <th>Datum hrambe</th>
+    <th>Dolzina hrambe</th>
     <th>Verzija</th>
   </tr>
+
+<?php 
+for ($j = 0 ; $j < $st_vrstic ; ++$j)
+{
+	$vrsta = mysqli_fetch_row($result); 
+	
+?>
+
+
   <tr>
     <td><?php echo $vrsta[1] ?></td>
-    <td><?php echo $vrstica[2] ?></td>
-    <td><?php echo $vrstica[3] ?></td>
-    <td><?php echo $vrstica[1] ?></td>
+    <td><?php echo $vrsta[5] ?></td>
+    <td><?php echo $vrsta[6] ?></td>
+    <td><?php echo $vrsta[4] ?></td>
   </tr>
+
+<?php 
+}
+  
+ 
+?>
 </table>
-
-
-
   
