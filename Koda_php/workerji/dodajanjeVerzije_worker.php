@@ -1,7 +1,7 @@
 <?php
 session_start();
-include  'C:\wamp64\www\Praktikum\razredi\Verzija.php';
-include_once  'C:\wamp64\www\Praktikum\razredi\Iprivolitev.php';
+require  '..\razredi\Verzija.php';
+require_once   '..\razredi\Iprivolitev.php';
 if(isset($_SESSION['current_user']) && isset($_POST['dodajPriv'])){
     $user=$_SESSION['current_user'];
     $text=$_POST['text'];
@@ -14,4 +14,4 @@ if(isset($_SESSION['current_user']) && isset($_POST['dodajPriv'])){
     //$id=$return->getId();
     //$_SESSION['idPrivolitve']=$id;
 }
-header("Location: ../succes.php");
+header("Location: ../list.php");
