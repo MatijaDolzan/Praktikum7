@@ -1,6 +1,6 @@
 account (spreminjanje gesla/emaila?/username?),
 analiza privolitev (v kakšnem smislu?, prikaz privolitev tako da se lahko analizirajo - ali kaj bolj integriranega?),
-search privolitev,
+search privolitev (po emailu),
 dodajanje pooblascenca (kot del verzioniranja (dodajanja verzij privolitve - naredimo kot opcijsko spremembo pri kreaciji nove verzije),
 dodajanje upravljalca (isto kot dodajanje pooblascenca), 
 izvoz v pdf s strani uporabnika (s strani stranke! (Torej stranke od uporabnika - nasi uporabniki so podjetja oz. nekdo iz podjetja) IN s strani uporabnika (Uporabniki tudi verjetno zelijo imeti fizicno kopijo svoje privolitve - ce se eno naredi je drugo itak lahko),
