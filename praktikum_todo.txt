@@ -7,5 +7,6 @@ izvoz v pdf s strani uporabnika (s strani stranke! (Torej stranke od uporabnika 
 blockchain (maybe - Pavlic je predlagal BigchainDB),
 google login,
 readme (Specificno README.md tukaj na GitHub repozitoriju - Pavlic je dal predlogo z enega drugega projekta kako naj zgleda),
+prikaz/generacija privolitve (dinamična glede na zahtevek poslan, gumb za "Mlajši od 16 let")
 __
 ??
