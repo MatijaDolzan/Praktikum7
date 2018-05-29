@@ -1,0 +1,11 @@
+account (spreminjanje gesla),
+analiza privolitev,
+search privolitev,
+dodajanje pooblascenca,
+dodajanje upravljalca, 
+izvoz v pdf s strani uporabnika,
+blockchain,
+google login,
+readme,
+__
+??
