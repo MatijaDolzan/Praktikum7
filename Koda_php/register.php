@@ -1,23 +1,23 @@
 <?php
-session_start();
+include ("menu.php");
 if(isset($_SESSION['current_user'])){
     header("Location: index.php");
     exit;
 }
 ?>
-<h2>Register</h2>
+<center><h2>Registracija</h2>
 
-<form action="register_worker_check.php" method="post">
-
-Username:
-<input type='text' name='username' /><br>
-E-mail:
-<input type='text' name='email' /><br>
-Password:
-<input type='password' name='password' /><br>
-
-<input type='submit' name='submit' value='Registriraj' class='login' />
-</form>
+    <form action="register_worker_check.php" method="post">
+    
+        <p>Uporabnisko ime:
+        <input type='text' name='username' /><br>
+        <p>Geslo:
+        <input type='password' name='password' /><br>
+        <p>E-mail:
+        <input type='text' name='email' /><br>
+    
+   <p> <input type='submit' name='submit' value='Registriraj' class='login' />
+    </form></center>
 
 <?php if(isset($_SESSION['register_error'])){
 ?>
