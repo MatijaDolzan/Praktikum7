@@ -1,12 +1,19 @@
 account (spreminjanje gesla/emaila?/username?),
+
 analiza privolitev (v kakšnem smislu?, prikaz privolitev tako da se lahko analizirajo - ali kaj bolj integriranega?),
-search privolitev (po emailu),
+
+search privolitev (po emailu) + pdf (izvoz v pdf s strani uporabnika (s strani stranke! (Torej stranke od uporabnika - nasi uporabniki so podjetja oz. nekdo iz podjetja) IN s strani uporabnika (Uporabniki tudi verjetno zelijo imeti fizicno kopijo svoje privolitve - ce se eno naredi je drugo itak lahko)),
+
 dodajanje pooblascenca (kot del verzioniranja (dodajanja verzij privolitve - naredimo kot opcijsko spremembo pri kreaciji nove verzije),
+
 dodajanje upravljalca (isto kot dodajanje pooblascenca), 
-izvoz v pdf s strani uporabnika (s strani stranke! (Torej stranke od uporabnika - nasi uporabniki so podjetja oz. nekdo iz podjetja) IN s strani uporabnika (Uporabniki tudi verjetno zelijo imeti fizicno kopijo svoje privolitve - ce se eno naredi je drugo itak lahko),
+
 blockchain (maybe - Pavlic je predlagal BigchainDB),
+
 google login,
+
 readme (Specificno README.md tukaj na GitHub repozitoriju - Pavlic je dal predlogo z enega drugega projekta kako naj zgleda),
+
 prikaz/generacija privolitve (dinamična glede na zahtevek poslan, gumb za "Mlajši od 16 let")
 __
 ??
