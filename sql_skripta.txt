@@ -8,7 +8,7 @@ CREATE TABLE Uporabnik(
 CREATE TABLE Privolitve(
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	naslov varchar(255) NOT NULL,
-	FK_priv_upo int NOT NULL
+	FK_priv_upo int 
   
 );
 CREATE TABLE Upravljalec(	
@@ -23,7 +23,7 @@ CREATE TABLE Verzija(
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT ,
 	verzija int NOT NULL,
 	text text(65535) NOT NULL,
- 	rok_hrambe DATE NOT NULL,
+ 	rok_hrambe varchar(255) NOT NULL,
 	FK_ver_priv int NOT NULL,
 	FK_ver_poob int
   
