@@ -2,4 +2,3 @@
 Praktikum II, projekt
 
 ##E-R diagram
-[ERBaze.png]
