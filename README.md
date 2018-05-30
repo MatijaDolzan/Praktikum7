@@ -1,5 +1,5 @@
 # Zbiranje privolitev po GDPR
-Praktikum II, projekt
+*Praktikum II, projekt*
 
 Po novi Splošni uredbi o varstvu podatkov morajo upravljavci osebnih podatkov (tisti, ki zbirajo in obdelujejo podatke) posameznika seznaniti o tem katere podatke zbirajo, kako dolgo, na kakšni podlagi (za podlago glejte 1. odstavek člena 6 v http://eur-lex.europa.eu/legal-content/SL/TXT/HTML/?uri=CELEX:32016R0679&from=SL) in zbirati dokaze, da so posamezniki privolitev dali.
 
@@ -71,4 +71,10 @@ CREATE TABLE Pooblascenec(
 );
 ```
 
+
+### AVTORJI:
+* Dolžan Matija 
+* Ekart Laura
+* Bencek Petra
+* Brod Matic
 
