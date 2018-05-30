@@ -1,1 +1,1 @@
-# Praktikum7
+# Zbiranje privolitev po GDPR
