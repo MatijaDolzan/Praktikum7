@@ -19,3 +19,56 @@ Bonus: Zavarovanje dokazov o privolitvi v verigi blokov
 
 ## E-R diagram
 ![erbaze](https://user-images.githubusercontent.com/39340895/40721340-82bf37c4-6419-11e8-8167-c570c87d9d74.png)
+
+
+## Navodila za namestitev
+* Potrebno si je namestiti Wamserver ter ko odpremo phpMyAmdmin je treba ustvariti new database z imenom "praktikum" 
+* Nato pa v sql zapišemo sledeče:
+```
+CREATE TABLE Uporabnik(
+    id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    username varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    password varchar(255)
+  
+);
+CREATE TABLE Privolitve(
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	naslov varchar(255) NOT NULL,
+	FK_priv_upo int NOT NULL
+  
+);
+CREATE TABLE Upravljalec(	
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	ime varchar(255) NOT NULL,
+	priimek varchar(255) NOT NULL,
+	naslov varchar(255) NOT NULL,
+	FK_upr_priv int
+  
+);
+CREATE TABLE Verzija(
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT ,
+	verzija int NOT NULL,
+	text text(65535) NOT NULL,
+ 	rok_hrambe varchar(255) NOT NULL,
+	FK_ver_priv int NOT NULL,
+	FK_ver_poob int
+  
+);
+CREATE TABLE Podpisnik(
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	email varchar(255) NOT NULL,
+	ip_add varchar(255) NOT NULL,
+	cas DATETIME NOT NULL,
+	FK_pod_ver int NOT NULL
+);
+CREATE TABLE Pooblascenec(	
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	ime varchar(255) NOT NULL,
+	priimek varchar(255) NOT NULL,
+	naslov varchar(255) NOT NULL
+  
+);
+```
+
+
