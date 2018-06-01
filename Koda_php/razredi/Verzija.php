@@ -1,10 +1,11 @@
 <?php
-include_once  'C:\wamp64\www\Praktikum\razredi\Iprivolitev.php';
+require_once   '\Iprivolitev.php';
 class Verzija implements Iprivolitev {
     private $verzija;
     private $text;
     private $hramba;
     private $FK_ver_priv;
+    private $poob;
     
     function Verzija($text,$hramba) {
         $this->id = NULL;
@@ -12,51 +13,69 @@ class Verzija implements Iprivolitev {
         $this->hramba=$hramba;
         $this->verzija=1;
         $this->FK_ver_priv=null;
+        $this->poob=null;
     }
     
     public function getVerzija(){
         return $this->verzija;
     }
-
- 
+    
+    
+    /**
+     * @return NULL
+     */
+    public function getPoob()
+    {
+        return $this->poob;
+    }
+    
+    /**
+     * @param NULL $poob
+     */
+    public function setPoob($poob)
+    {
+        $this->poob = $poob;
+    }
+    
     public function getText(){
         return $this->text;
     }
-
+    
     public function getHramba(){
         return $this->hramba;
     }
     public function setVerzija($verzija){
         $this->verzija = $verzija;
     }
-
+    
     public function setText($text){
         $this->text = $text;
     }
-
-
+    
+    
     public function setHramba($hramba){
         $this->hramba = $hramba;
     }
     
     public function getIzBazeVse()
     {}
-
-    public function addBaza($verzija){
+    
+    public function addBazaV($verzija){
         $st=$verzija->verzija;
         $text=$verzija->text;
         $hramba=$verzija->hramba;
         $FKid=$verzija->FK_ver_priv;
+        $FKpoob=$verzija->poob;
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "praktikum";
         $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
-        $query = "INSERT INTO Verzija (verzija, text,rok_hrambe,FK_ver_priv) VALUES ('$st', '$text','$hramba','$FKid');";
+        $query = "INSERT INTO Verzija (verzija, text,rok_hrambe,FK_ver_priv,FK_ver_poob) VALUES ('$st', '$text','$hramba','$FKid','$FKpoob');";
         $result = mysqli_query($db_server, $query);
         
     }
- 
+    
     public function getIzBaze($verzija){
         $isci=$verzija->FK_ver_priv;
         $servername = "localhost";
@@ -89,7 +108,7 @@ class Verzija implements Iprivolitev {
     {
         return $this->FK_ver_priv;
     }
-
+    
     /**
      * @param NULL $FK_ver_priv
      */
@@ -97,7 +116,10 @@ class Verzija implements Iprivolitev {
     {
         $this->FK_ver_priv = $FK_ver_priv;
     }
-
-
-
+    public function addBaza($privolitev)
+    {}
+    
+    
+    
+    
 }

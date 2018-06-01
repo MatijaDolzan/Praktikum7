@@ -65,5 +65,3 @@ tr:nth-child(even) {
 </ul>
 
 <center><h2>Seznam upravljalcev</h2></center>
-
-

@@ -77,7 +77,11 @@ $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die
 
 
 
-$query = "select * from privolitve,verzija where verzija.FK_ver_priv=privolitve.id ";
+$query = "select privolitve.naslov, verzija.rok_hrambe, verzija.verzija
+            from privolitve,verzija 
+            where verzija.FK_ver_priv=privolitve.id 
+            GROUP BY privolitve.naslov";
+
 $result = mysqli_query($db_server, $query);
 
 if (!$result)
@@ -96,7 +100,6 @@ else
 <table>
   <tr>
     <th>Privolitev - naslov</th>
-    <th>Besedilo</th>
     <th>Dolzina hrambe</th>
     <th>Verzija</th>
   </tr>
@@ -109,12 +112,13 @@ for ($j = 0 ; $j < $st_vrstic ; ++$j)
 ?>
 
 
-  <tr>
+  <tr><form method="post" action="pregledVerzij.php" name="pregledVerzij">
+  	
+    <td><input type="submit" name="izberiPrivolitev" value="<?php echo $vrsta[0] ?>"></td>
     <td><?php echo $vrsta[1] ?></td>
-    <td><?php echo $vrsta[5] ?></td>
-    <td><?php echo $vrsta[6] ?></td>
-    <td><?php echo $vrsta[4] ?></td>
-  </tr>
+    <td><?php echo $vrsta[2] ?></td>
+   
+  </form></tr>
 
 <?php 
 }
@@ -123,3 +127,7 @@ for ($j = 0 ; $j < $st_vrstic ; ++$j)
 ?>
 </table>
   
+
+<center><form action="podrobnosti_list.php" method="post">
+<input type="submit" name="podrPriv" value="Podrobnosti">
+</form></center>
