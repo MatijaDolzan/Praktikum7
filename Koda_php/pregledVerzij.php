@@ -2,9 +2,12 @@
 session_start();
 require    'razredi\Privolitev.php';
 require    'razredi\Verzija.php';
+require    'razredi\Pooblascenec.php';
+require    'razredi\Upravljalec.php';
 
-if(isset($_POST['izberiPrivolitev'])){
-    $id=$_POST['izberiPrivolitev'];
+if(isset($_POST['idPrivolitve'])){
+    $_SESSION['idP']=22;
+  
    
     
 }
@@ -59,8 +62,8 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-</style>
 
+</style>
 <center><h1><i><a class="active" href="index.php">Podjetje d.o.o.</a></i></h1></center>
 
 <p><div><ul>
@@ -89,13 +92,13 @@ $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die
 ?>
 
 <?php 
-$_SESSION['current_user']=6;
-$nekaj=$_SESSION['current_user']=6;
-
+$_SESSION['current_user']=1;
+$nekaj=$_SESSION['current_user']=1;
+$id=$_SESSION['idP'];
 $query = "SELECT * 
             FROM privolitve,verzija, uporabnik 
             WHERE verzija.FK_ver_priv=privolitve.id 
-            AND privolitve.FK_priv_upo='$nekaj'";
+            AND privolitve.id='$id'";
 
 $result = mysqli_query($db_server, $query);
 
@@ -109,6 +112,8 @@ else
 	if($st_vrstic > 0) 
 		print('');
 }
+
+
 
 ?>
 
@@ -152,11 +157,12 @@ for ($j = 0 ; $j < $st_vrstic ; ++$j)
     <td><?php echo $vrsta[10] ?></td>
     <td><?php echo $vrsta[11] ?></td>
     <td><?php echo $vrsta[12] ?></td>
+    
   </tr>
 
 <?php 
 }
-
+echo $_SESSION['idP'];
 ?>
 
 </table>

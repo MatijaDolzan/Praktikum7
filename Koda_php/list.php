@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+if (isset($_SESSION['idPrivolitve'])){
+    unset($_SESSION['idPrivolitve']);
+}
+    
 ?>
 
 <style>
@@ -77,7 +81,7 @@ $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die
 
 
 
-$query = "select privolitve.naslov, verzija.rok_hrambe, verzija.verzija
+$query = "select privolitve.id,privolitve.naslov, verzija.rok_hrambe, verzija.verzija
             from privolitve,verzija 
             where verzija.FK_ver_priv=privolitve.id 
             GROUP BY privolitve.naslov";
@@ -113,12 +117,13 @@ for ($j = 0 ; $j < $st_vrstic ; ++$j)
 
 
   <tr><form method="post" action="pregledVerzij.php" name="pregledVerzij">
-  	
-    <td><input type="submit" name="izberiPrivolitev" value="<?php echo $vrsta[0] ?>"></td>
-    <td><?php echo $vrsta[1] ?></td>
+  	<td hidden value="<?php echo $vrsta[0]?>" id="idPrivolitve" name="idPrivolitve"></td>
+    <td><input type="submit" name="izberiPrivolitev" value="<?php echo $vrsta[1] ?>"/></td>
     <td><?php echo $vrsta[2] ?></td>
-   
-  </form></tr>
+    <td><?php echo $vrsta[3] ?></td>
+    <td><?php echo $vrsta[0] ?></td>
+  </form>
+  </tr>
 
 <?php 
 }
