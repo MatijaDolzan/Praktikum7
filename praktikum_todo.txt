@@ -1,0 +1,23 @@
+account (spreminjanje gesla/emaila?/username?), - MATIC
+
+analiza privolitev (v kakšnem smislu?, prikaz privolitev tako da se lahko analizirajo - ali kaj bolj integriranega?), - LAURA 
+
+search privolitev (po emailu) + pdf (izvoz v pdf s strani uporabnika (s strani stranke! (Torej stranke od uporabnika - nasi uporabniki so podjetja oz. nekdo iz podjetja) IN s strani uporabnika (Uporabniki tudi verjetno zelijo imeti fizicno kopijo svoje privolitve - ce se eno naredi je drugo itak lahko)), - LAURA
+
+dodajanje pooblascenca (kot del verzioniranja (dodajanja verzij privolitve - naredimo kot opcijsko spremembo pri kreaciji nove verzije), -MATIJA
+
+dodajanje upravljalca (isto kot dodajanje pooblascenca), -MATIJA
+
+google login, - PETRA 
+
+readme (Specificno README.md tukaj na GitHub repozitoriju - Pavlic je dal predlogo z enega drugega projekta kako naj zgleda), -PETRA
+
+prikaz/generacija privolitve (dinamična glede na zahtevek poslan, gumb za "Mlajši od 16 let") -MATIC
+_________________________________________________________________________________________________________________________________________
+??
+
+blockchain (maybe - Pavlic je predlagal BigchainDB), - NA KONCU
+
+Docker 
+
+link na privolitev in shranjevanje na bazo (oddaja privolitev)
