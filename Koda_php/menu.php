@@ -61,7 +61,8 @@ tr:nth-child(even) {
 
 <p><div><ul>
  <center>
-  <div id="logout_div"><li><a href="dodajanjePrivolitve.php">Dodaj privolitev</a></li>
+  <div id="logout_div"><li>
+  <a href="dodajanjePrivolitve.php">Dodaj privolitev</a></li>
   <li><a href="list.php">Seznam privolitev</a></li>
   <li><a href="iskanje.php">Iskanje privolitev</a></li>
   <li><a href="seznam_upravljavcev.php">Upravljalci</a></li>  

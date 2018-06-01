@@ -1,5 +1,5 @@
 <?php
-include_once  'C:\wamp64\www\Praktikum\razredi\Iprivolitev.php';
+include_once  'C:\wamp64\www\Praktikum_II\razredi\Iprivolitev.php';
 class Privolitev implements Iprivolitev {
     private $id;
     private $naslov;

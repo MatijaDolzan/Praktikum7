@@ -65,14 +65,13 @@ tr:nth-child(even) {
 
 <p><div><ul>
  <center>
-  <div id="logout_div"><li><a href="dodajanjePrivolitve.php">Dodaj privolitev</a></li>
+  <li><a href="dodajanjePrivolitve.php">Dodaj privolitev</a></li>
   <li><a href="list.php">Seznam privolitev</a></li>
   <li><a href="iskanje.php">Iskanje privolitev</a></li>
   <li><a href="seznam_upravljavcev.php">Upravljalci</a></li>  
   <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
-  <li><a href="logout_worker.php">Odjava</a></li></div>
-  <div id="login_register_div"><li><a href="login.php" class='login'>Prijava</a></li>
-  <li><a href="register.php">Registracija</a></li></div></center>  
+  
+    
 </ul></div></p>
 
 <center><h2>Podrobnosti privolitve</h2></center>
@@ -89,8 +88,8 @@ $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die
 ?>
 
 <?php 
-$_SESSION['current_user']=6;
-$nekaj=$_SESSION['current_user']=6;
+$_SESSION['current_user']=1;
+$nekaj=$_SESSION['current_user']=1;
 
 $query = "SELECT * 
             FROM privolitve,verzija, uporabnik 

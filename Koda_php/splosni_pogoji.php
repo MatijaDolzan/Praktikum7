@@ -10,7 +10,7 @@ include ("menu.php");
 
 <p>7. Obdelava osebnih podatkov
 
-<p>7.1. To�nost podatkov
+<p>7.1. Točnost podatkov
 
 <p>7.1.1. SPAR plus kartico je mogo�e pridobiti le pod pogojem, da je prijavitelj dru�bi SPAR na pristopnici k tem Splo�nim pogojem, s katero je s SPAR sklenil pogodbo o imetni�tvu SPAR plus kartice, posredoval naslednje to�ne osebne podatke, ki se nana�ajo nanj: spol, ime, priimek, rojstni datum, podatke o prebivali��u, elektronski naslov in �tevilko mobilnega telefona. Pri posredovanju podatkov za pridobitev SPAR plus kartice ali pri kasnej�ih spremembah podatkov lahko vsaka fizi�na oseba odda le en aktualen elektronski naslov in le eno aktualno �tevilko mobilnega telefona. Posamezen elektronski naslov oziroma posamezna �tevilka mobilnega telefona se v bazi imetnikov SPAR plus kartice lahko vodi le pri enem imetniku SPAR plus kartice. SPAR te podatke potrebuje za komuniciranje z imetnikom in pripravo ter posredovanje ponudb in ugodnosti za imetnike, prilagojenih starosti, spolu in regiji prebivanja konkretnega imetnika.
 <p>7.1.2. SPAR bo podatke o ugodnostih, popustih, dobroimetju in nakupih, opravljenih s predlo�itvijo SPAR plus kartice, pridobljene pred sprejemom teh splo�nih pogojev, obdeloval v skladu s temi splo�nimi pogoji le v primeru, da imetnik SPAR plus kartice, izdane pred sprejemom teh splo�nih pogojev, k njim izrecno pristopi:
