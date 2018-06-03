@@ -22,7 +22,7 @@ Bonus: Zavarovanje dokazov o privolitvi v verigi blokov
 
 
 ## Navodila za namestitev
-* Potrebno si je namestiti Wamserver ter ko odpremo phpMyAmdmin je treba ustvariti new database z imenom "praktikum" 
+* Potrebno si je namestiti Wampserver ter ko odpremo phpMyAmdmin je treba ustvariti new database z imenom "praktikum" 
 * Nato pa v sql zapišemo sledeče:
 ```
 CREATE TABLE Uporabnik(
