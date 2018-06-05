@@ -1,51 +1,55 @@
 <?php
 if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['username'])) && (isset($_POST['email'])) && (isset($_POST['password']))) {
+    
     session_start();
-    include("db_connection.php");
+    require 'razredi/Uporabnik.php';
     
-    $user_name = $_POST['username'];
     $user_email = $_POST['email'];
+    $user_name = $_POST['username'];
     $user_password = $_POST['password'];
+    $user = new Uporabnik(null, $user_name, $user_email, $user_password);
+    $current_user = new Uporabnik(null, null, null, null);
+    $var = $current_user->getUporabnikViaEmail($user_email);
     
-    $sql = "SELECT email FROM uporabnik WHERE email = '"+$user_email+"'";
-    $result = $conn->query($sql);
-    $count = $result->num_rows;
-
-    if($count == 1) {
+    if($var === NULL){
         
-        $conn->close();
-        $_SESSION['register_error'] = "The given E-mail is already in use..";
-        header("Location: register.php");
-        
-    }else if($count != 0){
-        
-        $conn->close();
-        $_SESSION['error'] = "Database Error [register_worker] : Multiple Users with same Email?";
+        $_SESSION['error'] = "Error [register_worker] Selection: SQL [" . $sql . "]";
         header("Location: error.php");
+        exit();
         
-    }else{
+    }else if($var === FALSE) {
+       
+        $current_user = $current_user->addUporabnik($user);
         
-        $_SESSION['current_user'] = $user_email;
-        $sql = "INSERT INTO uporabnik (username, email, password) VALUES ('"+$user_name+"', '"+$user_email+"', '"+$user_password+"')";
-        
-        if ($conn->query($sql) === TRUE) {
-           
-            $conn->close();
-            header("Location: index.php");
+        if($current_user === FALSE){
+            
+            $_SESSION['error'] = "Error [register_worker] Insertion: SQL [" . $sql . "]";
+            header("Location: error.php");
+            exit();
             
         }else{
             
-            $conn->close();
-            $_SESSION['error'] = "Error [register_worker]: " . $sql . "<br>" . $conn->error;
-            header("Location: error.php");
+            session_destroy();
+            session_start();
+            $_SESSION['current_user'] = $current_user->getId();
+            header("Location: index.php");
+            exit();
             
         }
+        
+    }else{
+        
+        $_SESSION['register_error'] = "The given E-mail is already in use...";
+        header("Location: register.php");
+        exit();
+        
     }
     
 }else{
-    
+    //Change to redirect to index - possibly with a "Whoops! What happened there?" alert
     $_SESSION['error'] = "Invalid Request Method [register_worker]";
     header("Location: error.php");
+    exit();
     
 }
 ?>
