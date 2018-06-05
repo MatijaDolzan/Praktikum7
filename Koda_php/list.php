@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+if (isset($_SESSION['idPrivolitve'])){
+    unset($_SESSION['idPrivolitve']);
+}
+    
 ?>
 
 <style>
@@ -54,11 +58,14 @@ tr:nth-child(even) {
 
 <center><h1><i>Podjetje d.o.o.</i></h1></center>
 <ul>
-  <li><a href="dodajanjePrivolitve.php">Dodaj privolitev</a></li>
-  <li><a href="list.php">Seznam privolitev</a></li>
-  <li><a href="iskanje.php">Iskanje privolitev</a></li>
-  <li><a href="seznam_upravljavcev.php">Upravljalci</a></li>  
+  <li><a class="active" href="index.php">Domov</a></li>
+  <li><a href="dodaj_privloitev.php">Dodaj privolitev</a></li> 
+  <li><a href="list.php">Seznam</a></li>
+  <li><a href="dodajanje_upravljalcev.php">Dodaj upravljalca</a></li>    
   <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
+  <li><a href="login.php" class='login'>Prijava</a></li>
+  <li><a href="register.php">Registracija</a></li>
+  <li><a href="logout.php">Odjava</a></li>
 </ul>
 
 <center><h2>Seznam privolitev</h2></center>
@@ -74,7 +81,7 @@ $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die
 
 
 
-$query = "select privolitve.naslov, verzija.rok_hrambe, verzija.verzija
+$query = "select privolitve.id,privolitve.naslov, verzija.rok_hrambe, verzija.verzija
             from privolitve,verzija 
             where verzija.FK_ver_priv=privolitve.id 
             GROUP BY privolitve.naslov";
@@ -108,15 +115,16 @@ for ($j = 0 ; $j < $st_vrstic ; ++$j)
 	
 ?>
 
-
-  <tr><form method="post" action="pregledVerzij.php" name="pregledVerzij">
-  	
-    <td><input type="submit" name="izberiPrivolitev" value="<?php echo $vrsta[0] ?>"></td>
-    <td><?php echo $vrsta[1] ?></td>
+  <tr>
+  <form method="post" action="workerji/pregledVerzij_worker.php" >
+  	<td hidden><input type="text"  value="<?php echo $vrsta[0];?>" name="izbranaPrivolitev"/></td>
+    <td><input type="submit" name="izberiPrivolitev" value="<?php echo $vrsta[1]; ?>" /></td>
     <td><?php echo $vrsta[2] ?></td>
-   
-  </form></tr>
-
+    <td><?php echo $vrsta[3] ?></td>
+    <td><?php echo $vrsta[0] ?></td>
+  </form>
+  </tr>
+  
 <?php 
 }
   
