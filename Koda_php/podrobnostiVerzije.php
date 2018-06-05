@@ -1,18 +1,33 @@
 <?php
 session_start();
+
+//echo $_SESSION["izbranaVerzijaSes"];
+?>
+
+<p>
+
+<?php
+
+//echo $_SESSION["textVerzijeSes"];
+
+?>
+
+<?php
 require    'razredi\Privolitev.php';
 require    'razredi\Verzija.php';
 require    'razredi\Pooblascenec.php';
 require    'razredi\Upravljalec.php';
-$idPriv=0;
-if(!empty($_SESSION['izbranaPrivolitevSes'])){
-   $idPriv=$_SESSION['izbranaPrivolitevSes'];
+
+$idVerz=0;
+if(!empty($_SESSION['izbranaVerzijaSes'])){
+   $idVerz=$_SESSION['izbranaVerzijaSes'];
   
    
     
 }
 
 ?>
+
 <style>
 ul {
     list-style-type: none;
@@ -76,7 +91,7 @@ tr:nth-child(even) {
    
 </ul></div></p>
 
-<center><h2>Podrobnosti privolitve</h2></center>
+<center><h2><i>Podrobnosti verzije</i></h2></center>
 
 <?php
 
@@ -92,10 +107,14 @@ $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die
 <?php 
 $_SESSION['current_user']=1;
 $nekaj=$_SESSION['current_user']=1;
-$query = "SELECT privolitve.naslov, verzija.rok_hrambe, verzija.verzija, verzija.id, verzija.text
-            FROM privolitve,verzija, uporabnik 
+$query = "SELECT privolitve.naslov, verzija.verzija, verzija.text, 
+                upravljalec.ime, upravljalec.priimek, upravljalec.naslov, 
+                pooblascenec.ime, pooblascenec.priimek, pooblascenec.naslov
+            FROM privolitve, verzija, upravljalec, pooblascenec
             WHERE verzija.FK_ver_priv=privolitve.id 
-            AND privolitve.id='$idPriv'";
+            AND upravljalec.FK_upr_priv=privolitve.id
+            AND verzija.FK_ver_poob=pooblascenec.id
+            AND verzija.id='$idVerz'";
 
 $result = mysqli_query($db_server, $query);
 
@@ -115,51 +134,78 @@ else
 ?>
 
 <p>	
-<table>
-  <tr>
-    <th>Naslov privolitve</th>
-    <th>Dolzina hrambe</th>
-    <th>Verzija</th>
-    <th>Podrobnosti</th>
-   
-  </tr>
 
 <?php 
-$prenesi=null;
+
+
 for ($j = 0 ; $j < $st_vrstic ; ++$j)
 {
 	$vrsta = mysqli_fetch_row($result); 
-	$prenesi=$vrsta[3];
+	
+	echo "<b>Naslov privolitve: </b>".$vrsta[0];
 	
 ?>
-
-  <tr>
-   <form method="post" action="workerji/podrobnostiVerzije_worker.php" >
-  	<td hidden><input type="text"  value="<?php echo $vrsta[3];?>" name="izbranaVerzija"/></td>
-    <td><?php echo $vrsta[0]; ?></td>
-    <td><?php echo $vrsta[1] ?></td>
-    <td><?php echo $vrsta[2] ?></td>
-    <td hidden><input type="text"  value="<?php echo $vrsta[4];?>" name="textVerzije"/></td>
-    <td><input type="submit" name="izberiVerzijo" value="Prikazi" /></td>
-    </form>
-  </tr>
-  
-	
- 
+<p>	
 <?php 
-}
-$_SESSION["idVerzije"]=$prenesi;
+
+	echo "<b>Verzija: </b>".$vrsta[1];
+	
+?>
+<p>
+<?php 
+
+	echo "<b>Besedilo: </b>".$vrsta[2];
 
 ?>
+<p>	
+<?php 
 
-</table> 
+	echo "<b>Ime uporavljalca: </b>".$vrsta[3];
+	
+?>
+
+<p>	
+<?php 
+
+	echo "<b>Priimek uporavljalca: </b>".$vrsta[4];
+	
+?>
+
+<p>	
+<?php 
+
+	echo "<b>Naslov uporavljalca: </b>".$vrsta[5];
+	
+?>
+
+<p>	
+<?php 
+
+	echo "<b>Ime pooblascenca: </b>".$vrsta[6];
+	
+?>
+
+<p>	
+<?php 
+
+	echo "<b>Priimek pooblascenca: </b>".$vrsta[7];
+	
+?>
+
+<p>	
+<?php 
+
+	echo "<b>Naslov pooblascenca: </b>".$vrsta[8];
+	
+
+}
+
+
+?>
+</p>
+
 <center><form action="list.php" method="post">
 <input type="submit" name="podrPriv" value="Nazaj na seznam!">
 </form></center>
 
-<p><center>
-<form action="spreminjanjeVerzij.php" method="post">
-<input hidden="hidden" name="idVerz" value="<?php echo $prenesi ?>"/>
-		<input type="submit" name="potrdiVerz" value="Spremeni verzijo!">
-	</form>
-</center>
+
