@@ -14,7 +14,6 @@
 	$oAuth = new Google_Service_Oauth2($gClient);
 	$userData = $oAuth->userinfo_v2_me->get();
 
-
 	$_SESSION['google_id'] = $userData['id'];
 	$_SESSION['email'] = $userData['email'];
 	$_SESSION['familyName'] = $userData['familyName'];
@@ -22,7 +21,6 @@
 	
 	//$_SESSION['current_user'] = $userData['email'];
 
-	//header('Location: index.php');
 	header('Location: googlelogin_check.php');
 	exit();
 ?>
