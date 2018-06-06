@@ -71,6 +71,12 @@ CREATE TABLE Pooblascenec(
 );
 ```
 
+* Inštaliramo si: Eclipse IDE for Java EE Developers (to je Eclipse Oxygen for Java EE) - http://www.eclipse.org/downloads/eclipse-packages/
+* Nato določimo workspace za mapo našega php projekta in sicer tukaj: C:\wamp\www\
+* V Eclipse moramo vključiti tole: https://marketplace.eclipse.org/content/php-development-tools na tem linku najdemo gumb Install in le tega povlečemo v naš Eclipse
+* Ustvarimo nov PHP Project. Ime našega php projekta je: Praktikum
+
+
 
 ### AVTORJI:
 * Dolžan Matija 
