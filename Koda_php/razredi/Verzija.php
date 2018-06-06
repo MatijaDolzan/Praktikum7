@@ -13,13 +13,25 @@ class Verzija implements Iprivolitev {
         $this->hramba=$hramba;
         $this->verzija=1;
         $this->FK_ver_priv=null;
-        $this->poob=null;
+        $this->poob=0;
     }
     
     public function getVerzija(){
         return $this->verzija;
     }
     
+    public function getId()
+    {
+        return $this->id;
+    }
+    
+    /**
+     * @param NULL $poob
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
     
     /**
      * @return NULL
@@ -76,14 +88,14 @@ class Verzija implements Iprivolitev {
         
     }
     
-    public function getIzBaze($verzija){
-        $isci=$verzija->FK_ver_priv;
+    public function getIzBazeV($id){
+        $isci=$id;
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "praktikum";
         $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
-        $query = "SELECT * FROM verzija where FK_ver_priv='$isci';";
+        $query = "SELECT * FROM verzija where id='$isci';";
         $result = mysqli_query($db_server, $query);
         if (!$result)
         {
@@ -94,10 +106,12 @@ class Verzija implements Iprivolitev {
             $st_vrstic = mysqli_num_rows($result);
             if($st_vrstic > 0){
                 $vrstica = mysqli_fetch_row($result);
-                $staraPriv=new Privolitev($isci);
-                $staraPriv->setId($vrstica[0]);
-                $staraPriv->setUpor($vrstica[2]);
-                return $staraPriv;
+                $staraVerzija=new Verzija($vrstica[2],$vrstica[3]);
+                $staraVerzija->setId($vrstica[0]);
+                $staraVerzija->setVerzija($vrstica[1]);
+                $staraVerzija->setFK_ver_priv($vrstica[4]);
+                $staraVerzija->setPoob($vrstica[5]);
+                return $staraVerzija;
             }
         }
     }
@@ -118,6 +132,9 @@ class Verzija implements Iprivolitev {
     }
     public function addBaza($privolitev)
     {}
+    public function getIzBaze($index)
+    {}
+
     
     
     

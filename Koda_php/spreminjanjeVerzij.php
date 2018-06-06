@@ -7,11 +7,12 @@ require   'razredi\Pooblascenec.php';
 
 $idVerz=$_SESSION["idVerzije"];
 
-$verzija=new Verzija("a","b");
+$verzija=new Verzija("","");
 $NovaV=$verzija->getIzBazeV($idVerz);
 $idUpravljalca=$_SESSION["izbranaPrivolitevSes"];
-$upr=new Upravljalec('a', "a", "a", "a");
+$upr=new Upravljalec('', "", "", "");
 $upravljalec=$upr->getIzBaze($idUpravljalca);
+$idPooblascenca=0;
 $idPooblascenca=$NovaV->getPoob();
 $_SESSION['verzijaVerzije']=$NovaV->getVerzija();
 $poob=new Pooblascenec("", "", "");

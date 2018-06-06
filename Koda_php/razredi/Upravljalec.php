@@ -102,8 +102,8 @@ class Upravljalec implements Iprivolitev {
         {
             $st_vrstic = mysqli_num_rows($result);
             if($st_vrstic >0){
-                $id = mysqli_fetch_row($result);
-                $return=new Upravljalec();
+                $vrstica = mysqli_fetch_row($result);
+                $return=new Upravljalec($vrstica[0],$vrstica[1],$vrstica[2],$vrstica[3]);
                 $return->setId($vrstica[0]);
                 $return->setName($vrstica[1]);
                 $return->setSubname($vrstica[2]);
@@ -113,6 +113,14 @@ class Upravljalec implements Iprivolitev {
         }
     }
     
+    /**
+     * @param NULL $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
     /**
      * @return NULL
      */

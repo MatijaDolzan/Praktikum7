@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'razredi\Iprivolitev.php';
 require    'razredi\Privolitev.php';
 require    'razredi\Verzija.php';
 require    'razredi\Pooblascenec.php';
