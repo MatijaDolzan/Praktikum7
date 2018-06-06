@@ -22,6 +22,8 @@ Bonus: Zavarovanje dokazov o privolitvi v verigi blokov
 
 
 ## Navodila za namestitev
+Za delovanje potrebujemo: Wampserver (64-bitni), Eclipse Oxygen.
+
 * Potrebno si je namestiti Wampserver ter ko odpremo phpMyAmdmin je treba ustvariti new database z imenom "praktikum" 
 * Nato pa v sql zapišemo sledeče:
 ```
