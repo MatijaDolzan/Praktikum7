@@ -1,5 +1,5 @@
 <?php
-include_once  '\razredi\Iprivolitev.php';
+include_once  '\Iprivolitev.php';
 class Privolitev implements Iprivolitev {
     private $id;
     private $naslov;
