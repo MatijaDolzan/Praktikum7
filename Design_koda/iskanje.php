@@ -151,12 +151,10 @@ header('Content-type', 'text/html; charset=UTF-8');
                                     	
                                     	?>
                                    
-                               
                                 </section>
 						</div>
-					</div>
-					
-				</section>
+				</div>
+			</section>
 
 			<!-- Footer -->
 				<footer id="footer">
