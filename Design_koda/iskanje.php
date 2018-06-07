@@ -51,7 +51,7 @@ header('Content-type', 'text/html; charset=UTF-8');
 		<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2>Seznam privolitev</h2>
+						<h2>Iskanje</h2>
 					</header>
 					
 					<div class="row">
