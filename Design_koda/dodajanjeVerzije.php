@@ -29,28 +29,26 @@ require   'razredi\Pooblascenec.php';
 
 			<!-- Header -->
 				<header id="header">
-					<h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
+					<h1><a href="index.html">Zbiranje privolitev </a> po GDPR</h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="index.html">Domov</a></li>
 							<li>
-								<a href="#" class="icon fa-angle-down">Layouts</a>
+								<a href="#" class="icon fa-angle-down">Menu</a>
 								<ul>
-									<li><a href="generic.html">Generic</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="elements.html">Elements</a></li>
 									<li>
-										<a href="#">Submenu</a>
+										<a href="dodajanjePrivolitve.php">Privolitve - podmeni</a>
 										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
+											<li><a href="dodajanjePrivolitve.php">Dodaj privolitev</a></li>
+											<li><a href="list.php">Seznam privolitev</a></li>
+											<li><a href="iskanje.php">Iskanje privolitev</a></li>
 										</ul>
 									</li>
+									<li><a href="seznam_upravljavcev.php">Upravljalci</a></li>
+									<li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
 								</ul>
 							</li>
-							<li><a href="#" class="button">Sign Up</a></li>
+							<li><a href="#" class="button">Prijavi se</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -174,7 +172,7 @@ require   'razredi\Pooblascenec.php';
 						</form>
 						
 						<script>
-                        document.getElementById('DodPoob').onchange = function() {
+                        	document.getElementById('DodPoob').onchange = function() {
                             document.getElementById('imePoob').disabled = !this.checked;
                             document.getElementById('priimekPoob').disabled = !this.checked;
                             document.getElementById('naslovPoob').disabled = !this.checked;
@@ -183,9 +181,6 @@ require   'razredi\Pooblascenec.php';
 
 					</div>
 				</section>
-				
-
-
 				
 
 			<!-- Footer -->
@@ -216,22 +211,3 @@ require   'razredi\Pooblascenec.php';
 
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
