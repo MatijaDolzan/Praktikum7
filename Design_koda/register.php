@@ -1,21 +1,16 @@
 <?php
 include ("header.php");
-// include ("check_user.php");
-
-
-    $uporabnik=null;
-    //$uporabnik=$_SESSION['current_user'];
-    $_SESSION['current_user']=1;
-
-require    'razredi\Privolitev.php';
-require_once   'razredi\Iprivolitev.php';
+if(isset($_SESSION['current_user'])){
+    header("Location: index.php");
+    exit;
+}
 ?>
 
-
+    
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Dodajanje nove privolitve</title>
+		<title>Registracija</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -31,28 +26,48 @@ require_once   'razredi\Iprivolitev.php';
 			<!-- Main -->
 				<section id="main" class="container 75%">
 					<header>
-						<h2>Dodajanje privolitev</h2>
-						<p>Dodajte novo privolitev.</p>
+						<h2>Registracija</h2>
 					</header>
 					<div class="box">
-						<form method="post" action="workerji/dodajanjePrivolitev_worker.php">
+					
+						<form method="post" action="register_worker_check.php">
 							
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input type="text" name="naslov" value="" placeholder="Naslov" />
+									<input type="text" name="username" value="" placeholder="Uporabnisko ime" />
+								</div>
+							</div>
+							<div class="row uniform 50%">
+								<div class="12u">
+									<input type="password" name="password" value="" placeholder="Geslo" />
+								</div>
+							</div>
+							<div class="row uniform 50%">
+								<div class="12u">
+									<input type="text" name="email" value="" placeholder="Email" />
 								</div>
 							</div>
 							
 							<div class="row uniform">
 								<div class="12u">
 									<ul class="actions align-center">
-										<li><input type="submit" name="dodajPriv" value="Dodaj!" /></li>
+										<li><input type="submit" name="submit" value="Registriraj" /></li>
 									</ul>
 								</div>
 							</div>
+							
 						</form>
+						
+						<?php if(isset($_SESSION['register_error'])){
+                        ?>
+                        <script>alert('<?php echo $_SESSION['register_error'];?>');</script>
+                        <?php 
+                        }
+                        ?>
+
 					</div>
 				</section>
+				
 
 			<!-- Footer -->
 				<footer id="footer">
@@ -74,8 +89,4 @@ require_once   'razredi\Iprivolitev.php';
 
 	</body>
 </html>
-
-
-
-
-
+    
