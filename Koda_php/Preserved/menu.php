@@ -61,15 +61,26 @@ tr:nth-child(even) {
 
 <p><div><ul>
  <center>
-  <div id="logout_div"><li>
-  <a href="dodajanjePrivolitve.php">Dodaj privolitev</a></li>
-  <li><a href="list.php">Seznam privolitev</a></li>
-  <li><a href="iskanje.php">Iskanje privolitev</a></li>
-  <li><a href="seznam_upravljavcev.php">Upravljalci</a></li>  
-  <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
-  <li><a href="logout_worker.php">Odjava</a></li></div>
-  <div id="login_register_div"><li><a href="login.php" class='login'>Prijava</a></li>
-  <li><a href="register.php">Registracija</a></li></div></center>  
+  <?php
+	if(isset($_SESSION['current_user'])){
+	?>
+  
+	  <a href="dodajanjePrivolitve.php">Dodaj privolitev</a></li>
+	  <li><a href="list.php">Seznam privolitev</a></li>
+	  <li><a href="iskanje.php">Iskanje privolitev</a></li>
+	  <li><a href="seznam_upravljavcev.php">Upravljalci</a></li>  
+	  <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
+	  <li><a href="logout_worker.php">Odjava</a></li>
+	<?php 
+	} else{
+	?>  
+	  
+		  <li><a href="login.php" class='login'>Prijava</a></li>
+		  <li><a href="register.php">Registracija</a></li>
+		<?php 
+	} 
+	?>   
+		  </center>  
 </ul></div></p>
 
 
