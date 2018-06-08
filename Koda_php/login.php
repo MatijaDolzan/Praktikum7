@@ -1,5 +1,3 @@
-
-
 <?php
 include ("menu.php");
 if(isset($_SESSION['current_user'])){
@@ -7,8 +5,6 @@ if(isset($_SESSION['current_user'])){
     exit;
 }
 ?>
-
-
 
 <center><h2>Prijava</h2>
 
@@ -20,10 +16,10 @@ if(isset($_SESSION['current_user'])){
     <input type='password' name='password' /><br>
     
    <p> <input type='submit' name='submit' value='Potrdi' class='login' />
-</form>
+   <p> <input type="button" onclick="window.location = 'google_login_preset.php';" value="Log In With Google" class="btn btn-danger" />
+   </form>
 
 </center>
-
 <?php if(isset($_SESSION['login_error'])){
 ?>
 <script>alert('<?php echo $_SESSION['login_error'];?>');</script>

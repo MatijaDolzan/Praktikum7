@@ -39,10 +39,19 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['username'])) && (iss
         
     }else{
         
-        $_SESSION['register_error'] = "The given E-mail is already in use...";
-        header("Location: register.php");
-        exit();
-        
+        if ($var->getPassword() === null){
+            
+            $_SESSION['register_error'] = "This E-Mail is associated with an existing Google account.";
+            header("Location: register.php");
+            exit();
+            
+        }else{
+            
+            $_SESSION['register_error'] = "The given E-mail is already in use...";
+            header("Location: register.php");
+            exit();
+            
+        }
     }
     
 }else{
