@@ -2,7 +2,7 @@
 
 
 include ("header.php");
-//include ("check_user.php");
+include ("check_user.php");
 
 
 require_once 'razredi\Iprivolitev.php';
@@ -20,7 +20,7 @@ if(!empty($_SESSION['izbranaPrivolitevSes'])){
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Podrobnosti privolitve</title>
+		<title>Zbiranje privolitev po GDPR</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -72,8 +72,6 @@ if(!empty($_SESSION['izbranaPrivolitevSes'])){
                     	if($st_vrstic > 0) 
                     		print('');
                     }
-                    
-                    
                     
                     ?>	
                     

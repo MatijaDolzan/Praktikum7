@@ -1,5 +1,9 @@
 <?php
-session_start();
+include ("header.php");
+include ("check_user.php");
+?>
+
+<?php
 require   'razredi\Verzija.php';
 require_once  'razredi\Iprivolitev.php';
 require   'razredi\Upravljalec.php';
@@ -55,7 +59,7 @@ $chbx10=$arr[9];
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Spreminjanje verzij</title>
+		<title>Zbiranje privolitev po GDPR</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->

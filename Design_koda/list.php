@@ -1,6 +1,6 @@
 <?php
 include ("header.php");
-//include ("check_user.php");
+include ("check_user.php");
 
 if (isset($_SESSION['idPrivolitve'])){
     unset($_SESSION['idPrivolitve']);
@@ -10,7 +10,7 @@ if (isset($_SESSION['idPrivolitve'])){
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Seznam privolitev</title>
+		<title>Zbiranje privolitev po GDPR</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -82,12 +82,29 @@ if (isset($_SESSION['idPrivolitve'])){
         
 											<tbody>
 												<tr>
-                                             	<form method="post" action="workerji/pregledVerzij_worker.php" >
-                                              		<td hidden><input type="text"  value="<?php echo $vrsta[0];?>" name="izbranaPrivolitev"/></td>
-                                               		<td><input class="button fit small" type="submit" name="izberiPrivolitev" value="<?php echo $vrsta[1]; ?>" /></td>
-                                                	<td><?php echo $vrsta[2] ?></td>
-                                                	<td><?php echo $vrsta[3] ?></td>
-                                              	</form>
+                                                      	<form action="workerji/pregledVerzij_worker.php" method="post">
+                                          					<div class="row uniform 50%">
+                        										<div class="12u">
+                        											<td hidden><input type="text"  value="<?php echo $vrsta[0];?>" name="izbranaPrivolitev"/></td>
+                        										</div>
+        													</div>
+        													<div class="row uniform 50%">
+                        										<div class="12u">
+                        											<td><input class="button fit small" type="submit" name="izberiPrivolitev" value="<?php echo $vrsta[1]; ?>" /></td>
+                        										</div>
+        													</div>
+        													<div class="row uniform 50%">
+                        										<div class="12u">
+                        											<td><?php echo $vrsta[2] ?></td>
+                        										</div>
+        													</div>
+        													<div class="row uniform 50%">
+                        										<div class="12u">
+                        											<td><?php echo $vrsta[3] ?></td>
+                        										</div>
+        													</div>
+                                          				</form>
+                                              	
                                               	</tr>
                                               
                                                     <?php 
@@ -98,7 +115,11 @@ if (isset($_SESSION['idPrivolitve'])){
 										</table>
 										
                                     	<form action="podrobnosti_list.php" method="post">
-                                 			  <li><input type="submit" name="podrPriv" value="Podrobnosti" class="button special fit"></li>
+                                  			<div class="row uniform 50%">
+                								<div class="12u">
+                									<input type="submit" name="podrPriv" value="Podrobnosti" class="button special fit">
+                								</div>
+											</div>
                                   		</form>
                                     
 									</div>

@@ -1,13 +1,13 @@
 <?php
 include ("header.php");
-//include ("check_user.php");
+include ("check_user.php");
 ?>
 
 
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title></title>
+		<title>Zbiranje privolitev po GDPR</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -97,9 +97,13 @@ include ("header.php");
 												
 											</tbody>
 										</table>
-										
-                                    	<form action="list.php" method="post">
-                                 			  <li><input type="submit" name="podrPriv" value="Nazaj" class="button special fit"></li>
+
+                                  		<form action="podrobnosti_list.php" method="post">
+                                  			<div class="row uniform 50%">
+                								<div class="12u">
+                									<input type="submit" name="podrPriv" value="Nazaj" class="button special fit">
+                								</div>
+											</div>
                                   		</form>
 									</div>
 								</section>

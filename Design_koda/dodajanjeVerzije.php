@@ -1,7 +1,7 @@
 <?php
 
 include ("header.php");
-//include ("check_user.php");
+include ("check_user.php");
 
 $uporabnik=$_SESSION['current_user'];
 $id=$_SESSION['idPrivolitve'];
@@ -16,7 +16,7 @@ require   'razredi\Pooblascenec.php';
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Dodajanje nove verzije</title>
+		<title>Zbiranje privolitev po GDPR</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -96,14 +96,32 @@ require   'razredi\Pooblascenec.php';
 							<div class="row uniform 50%">
 								<div class="12u">
 									<input type="text" name="chbx1" value="" />
+                                </div>
+                                <div class="12u">    
                                     <input type="text" name="chbx2" value="" />
+                                </div>
+                                <div class="12u">    
                                     <input type="text" name="chbx3" value="" />
+                                </div>
+                                <div class="12u">    
                                     <input type="text" name="chbx4" value="" />
+                                </div>
+                                <div class="12u">    
                                     <input type="text" name="chbx5" value="" />
+                                </div>
+                                <div class="12u">   
                                     <input type="text" name="chbx6" value="" />
+                                </div>
+                                <div class="12u">    
                                     <input type="text" name="chbx7" value="" />
+                                </div>
+                                <div class="12u">    
                                     <input type="text" name="chbx8" value="" />
+                                </div>
+                                <div class="12u">    
                                     <input type="text" name="chbx9" value="" />
+                                </div>
+                                <div class="12u">    
                                     <input type="text" name="chbx10" value="" />
 								</div>
 							</div>

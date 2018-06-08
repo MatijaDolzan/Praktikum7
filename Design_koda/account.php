@@ -1,6 +1,6 @@
 <?php
 include ("header.php");
-// include 'check_user.php';
+include 'check_user.php';
 require 'razredi/Uporabnik.php';
 
 if(isset($_POST['edit'])){
@@ -31,12 +31,10 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
 ?>
 
 
-
-
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Urejanje podatkov racuna</title>
+		<title>Zbiranje privolitev po GDPR</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->

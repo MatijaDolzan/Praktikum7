@@ -1,12 +1,12 @@
 <?php
 include ("header.php");
-//include ("check_user.php");
+include ("check_user.php");
 ?>
 
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Seznam privolitev</title>
+		<title>Zbiranje privolitev po GDPR</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -15,7 +15,6 @@ include ("header.php");
 	</head>
 	<body>
 		<div id="page-wrapper">
-
 			
 			<!-- Header -->	
 		<!-- Main -->
@@ -93,8 +92,6 @@ include ("header.php");
 						</div>
 					</div>
 				
-				
-				
 				<div class="row">
 						<div class="12u">
 
@@ -103,7 +100,7 @@ include ("header.php");
 									<h3>Lists</h3>
 									
 										<div class="jumbotron">
-                                    	<table cellspacing="0">
+                                    	<table>
                                     		<tr> <strong><i>E-mail: </i></strong><?php echo highlight_word($row[0], $search); ?><br></tr>
                                     		<tr> <strong><i>Naslov privolitve: </i></strong><?php echo highlight_word($row[1], $search);?><br></tr >
                                     		<tr> <strong><i>Verzija: </i></strong><?php echo highlight_word($row[2], $search);?><br></tr>		
@@ -120,6 +117,7 @@ include ("header.php");
                                         }
                                     	
                                     	?>
+                                    	</div>
                                    
                                 </section>
 						</div>
