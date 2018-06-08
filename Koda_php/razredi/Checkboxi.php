@@ -68,7 +68,7 @@ class Checkbox {
     }
     public function getVseCheckboxe($fk){
         $connection = mysqli_connect("localhost", "root", "", "praktikum") OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
-        $sql = "SELECT *  FROM checkbox where FK_che_ver='36';";
+        $sql = "SELECT *  FROM checkbox where FK_che_ver='$fk';";
         $result = mysqli_query($connection, $sql);
         mysqli_close($connection);
         if (!$result)

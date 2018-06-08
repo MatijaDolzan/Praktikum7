@@ -24,7 +24,7 @@ if(isset($_SESSION['current_user']) ){
         
     }else if($var === FALSE) {
         
-        $current_user = $current_user->addUporabnik($user, TRUE);
+        $current_user = $current_user->addUporabnik($user);
         
         if($current_user === FALSE){
             

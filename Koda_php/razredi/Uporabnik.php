@@ -112,12 +112,16 @@ class Uporabnik {
         }
     }
     
-    public function addUporabnik(Uporabnik $user){
+    public function addUporabnik(Uporabnik $user, $google=FALSE){
         $user_name = $user->username;
         $user_email = $user->email;
         $user_password = $user->password;
         $connection = mysqli_connect("localhost", "root", "", "praktikum") OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
-        $sql = "INSERT INTO uporabnik (username, email, password) VALUES ('$user_name', '$user_email', '$user_password');";
+        if($google){
+            $sql = "INSERT INTO uporabnik (username, email) VALUES ('$user_name', '$user_email');";
+        }else{
+            $sql = "INSERT INTO uporabnik (username, email, password) VALUES ('$user_name', '$user_email', '$user_password');";
+        }
         $result = mysqli_query($connection, $sql);
         if ($result === FALSE){
             mysqli_close($connection);
