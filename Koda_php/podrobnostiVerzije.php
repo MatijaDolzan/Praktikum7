@@ -103,7 +103,7 @@ $privolitve =new Privolitev(null);
 $version = new Verzija(null, null);
 $poob = new Pooblascenec(null, null, null);
 $upra = new Upravljalec(null, null, null, null);
-$checkbox= new Checkbox(null, null);
+//$checkbox= new Checkbox(null, null);
 
 $current_version = $version->getIzBazeV($verzija_id);
 $poob_id = $current_version->getPoob();
@@ -111,9 +111,9 @@ $privolitev_id = $current_version->getFK_ver_priv();
 $current_upra = $upra->getIzBaze($privolitev_id);
 $current_privolitve= $privolitve->getIzBazeId($privolitev_id);
 //$checkbox_id= $current_version->  MISLIM DA ŠE NI METODE
-$current_checkbox= $checkbox->getVseCheckboxe($fk);
+//$current_checkbox= $checkbox->getVseCheckboxe($fk);
 
-echo "<br> Naslov privolitve: <br>";
+echo "<br><b> Naslov privolitve: </b>";
 echo $current_privolitve->getNaslov();
 
 echo "<p><b> Verzija: </b>";
@@ -138,12 +138,12 @@ if($poob_id !== NULL){
     echo $current_poob->getNaslov();
 }
 
-if($checkbox_id !== NULL){
-    $current_checkbox = $checkbox->getVseCheckboxe($fk);
-    echo "<p><b> Checkbox: </b>";
+//if($checkbox_id !== NULL){
+//    $current_checkbox = $checkbox->getVseCheckboxe($fk);
+//    echo "<p><b> Checkbox: </b>";
     //echo $current_checkbox->;
    
-}
+//}
 
 ?>
 </p>
