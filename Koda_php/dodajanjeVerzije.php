@@ -1,7 +1,6 @@
 <?php
 session_start();
 $uporabnik=$_SESSION['current_user'];
-//$_SESSION['current_user']=1;
 $id=$_SESSION['idPrivolitve'];
 
 require   'razredi\Verzija.php';
@@ -81,7 +80,7 @@ tr:nth-child(even) {
 	
 	7. Obdelava osebnih podatkov
 	
-	7.1. Točnost podatkov
+	7.1. ToÄ�nost podatkov
 	
 	7.2. Vrste podatkov in nameni njihove obdelave
 	
@@ -95,27 +94,48 @@ tr:nth-child(even) {
 	
 	7.8. Informacije o pravicah v zvezi z varstvom osebnih podatkov
 
-    7.8.1. Imetnik SPAR plus kartice ima pravico, da pisno na sedež 
-    družbe Spar Slovenija d.o.o., Spar plus oddelek, Letališka c. 26, 
-    1000 Ljubljana, ali po e-pošti na naslov: spar.plus@spar.si zahteva
-    dostop do podatkov, ki se nanašajo nanj. Na enak način lahko uveljavlja
+    7.8.1. Imetnik SPAR plus kartice ima pravico, da pisno na sedeÅ¾ 
+    druÅ¾be Spar Slovenija d.o.o., Spar plus oddelek, LetaliÅ¡ka c. 26, 
+    1000 Ljubljana, ali po e-poÅ¡ti na naslov: spar.plus@spar.si zahteva
+    dostop do podatkov, ki se nanaÅ¡ajo nanj. Na enak naÄ�in lahko uveljavlja
     pravico do omejitve obdelave, izbrisa podatkov in prenosljivosti 
     podatkov.
    
     7.8.2. Pravico do ugovora lahko imetnik uveljavlja v skladu s 7.3. 
-    točko teh Splošnih pogojev. Pravico do popravka imetnik uveljavlja
-    v skladu s 7.5. točko teh Splošnih pogojev.
+    toÄ�ko teh SploÅ¡nih pogojev. Pravico do popravka imetnik uveljavlja
+    v skladu s 7.5. toÄ�ko teh SploÅ¡nih pogojev.
     
-    7.9. Pooblaščena oseba za varstvo osebnih podatkov
-    Pooblaščena oseba za varstvo osebnih podatkov v družbi Spar 
-    Slovenija d.o.o.je vodja pravne službe, Boštjan Grom; 
-    e-mail: pooblascenec@spar.si.
+   	7.9 Upravljalec.
     	
 	
 	</textarea>
     <p>Rok hrambe: <input type="text" name="hramba" value=""><br>
     <br/>
 
+
+   	<h2>Dodajanje checkboxov k privolitvi:</h2>
+   	
+  
+
+    <input type="text" name="chbx1" value="">
+    <input type="text" name="chbx2" value="">
+    <input type="text" name="chbx3" value="">
+    <input type="text" name="chbx4" value="">
+    <input type="text" name="chbx5" value="">
+    <input type="text" name="chbx6" value="">
+    <input type="text" name="chbx7" value="">
+    <input type="text" name="chbx8" value="">
+    <input type="text" name="chbx9" value="">
+    <input type="text" name="chbx10" value="">
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <h2>Upravljalec GDPR pogodbe</h2>
     <p>Ime: <input type="text" name="imeUpr" value=""><br/>
     <p>Priimek: <input type="text" name="priimekUpr" value=""><br/>

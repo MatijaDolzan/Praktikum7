@@ -104,10 +104,7 @@ class Upravljalec implements Iprivolitev {
             if($st_vrstic >0){
                 $vrstica = mysqli_fetch_row($result);
                 $return=new Upravljalec($vrstica[0],$vrstica[1],$vrstica[2],$vrstica[3]);
-                $return->setId($vrstica[0]);
-                $return->setName($vrstica[1]);
-                $return->setSubname($vrstica[2]);
-                $return->setAddress($vrstica[3]);
+                
                 return $return;
             }
         }

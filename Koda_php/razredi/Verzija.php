@@ -85,7 +85,17 @@ class Verzija implements Iprivolitev {
         $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
         $query = "INSERT INTO Verzija (verzija, text,rok_hrambe,FK_ver_priv,FK_ver_poob) VALUES ('$st', '$text','$hramba','$FKid','$FKpoob');";
         $result = mysqli_query($db_server, $query);
-        
+        $query ="SELECT id from Verzija where verzija='$st' AND text='$text' AND rok_hrambe='$hramba' AND FK_ver_priv='$FKid' AND FK_ver_poob='$FKpoob'";
+        $result=mysqli_query($db_server, $query);
+        if(!$result){
+            die;
+        }else{
+            $st_vrstic = mysqli_num_rows($result);
+            if($st_vrstic =1){
+                $vrstica = mysqli_fetch_row($result);
+                return $vrstica[0];
+            }
+        }
     }
     
     public function getIzBazeV($id){

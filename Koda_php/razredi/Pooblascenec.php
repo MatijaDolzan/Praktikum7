@@ -20,7 +20,7 @@ class Pooblascenec implements Iprivolitev {
         
     }
     
-    public function addBaza($pooblascenec){
+    public function addBaza( $pooblascenec){
         $ime=$pooblascenec->ime;
         $priimek=$pooblascenec->priimek;
         $naslov=$pooblascenec->naslov;
@@ -34,7 +34,7 @@ class Pooblascenec implements Iprivolitev {
         
     }
     
-    public function getIzBaze($pooblascenec){
+    public function getIzBaze( $pooblascenec){
         $ime=$pooblascenec->ime;
         $priimek=$pooblascenec->priimek;
         $naslov=$pooblascenec->naslov;
