@@ -75,4 +75,4 @@ if(isset($_POST['dodajVerz'])){
     $upr=new Upravljalec($imeUpr, $priimekUpr, $naslovUpr,$priv);
     $upr->addBazaU($upr);
 }
-header("Location: ../list.php");
+header("Location: ../pregledVerzij.php");
