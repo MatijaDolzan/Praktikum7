@@ -1,5 +1,5 @@
 <?php
-if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['edit']))) {
+if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['edit'])) && (isset($_SESSION['current_edit']))) {
     
     session_start();
     require 'razredi/Uporabnik.php';
@@ -7,19 +7,19 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['edit']))) {
     $edited_var = null;
     $edited_var_value = null;
     
-    if(isset($_POST['edited_email'])){
+    if((isset($_POST['edited_email'])) && ($_SESSION['current_edit'] === "email")){
         
         $edited_var = "email";
         $edited_var_string = "E-Mail";
         $edited_var_value = $_POST['edited_email'];
         
-    }else if(isset($_POST['edited_username'])){
+    }else if((isset($_POST['edited_username'])) && ($_SESSION['current_edit'] === "username")){
         
         $edited_var = "username";
         $edited_var_string = "Username";
         $edited_var_value = $_POST['edited_username'];
         
-    }else if(isset($_POST['edited_password'])){
+    }else if((isset($_POST['edited_password'])) && ($_SESSION['current_edit'] === "password")){
         
         $edited_var = "password";
         $edited_var_string = "Password";
