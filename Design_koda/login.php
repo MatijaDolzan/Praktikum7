@@ -76,6 +76,7 @@ if(isset($_SESSION['current_user'])){
                         ?>
                         <script>alert('<?php echo $_SESSION['login_error'];?>');</script>
                         <?php 
+                         unset($_SESSION['login_error']);
                         }
                         ?>
 

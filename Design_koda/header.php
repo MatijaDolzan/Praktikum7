@@ -25,11 +25,24 @@ header('Content-type', 'text/html; charset=UTF-8');
 									</li>
 									<li><a href="seznam_upravljavcev.php">Upravljalci</a></li>
 									<li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
-									<li><a href="account.php">Spremeni svoje podatke</a></li>
 								</ul>
 							</li>
-							<li><a href="login.php" class="button">Prijavi se</a></li>
-							<li><a href="logout_worker.php" class="button">Odjavi se</a></li>
+							
+							<?php
+                        	if(isset($_SESSION['current_user'])){
+                        	?>
+    							<li><a href="account.php" class="button">Uredi podatke</a></li>
+    							<li><a href="logout_worker.php" class="button">Odjavi se</a></li>
+    						<?php 
+                        	} else{
+                        	?>  
+                        	  
+                        		<li><a href="login.php" class="button" >Prijavi se</a></li>
+								<li><a href="register.php" class="button">Registriraj se</a></li>
+                        		<?php 
+                        	} 
+                        	?> 		
+    					
 						</ul>
 					</nav>
 				</header>

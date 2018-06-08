@@ -61,7 +61,8 @@ if(isset($_SESSION['current_user'])){
 						<?php if(isset($_SESSION['register_error'])){
                         ?>
                         <script>alert('<?php echo $_SESSION['register_error'];?>');</script>
-                        <?php 
+                        <?php
+                        unset($_SESSION['register_error']);
                         }
                         ?>
 
