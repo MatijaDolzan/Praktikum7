@@ -22,8 +22,6 @@ $idVerz=0;
 if(!empty($_SESSION['izbranaVerzijaSes'])){
    $idVerz=$_SESSION['izbranaVerzijaSes'];
   
-   
-    
 }
 
 ?>
@@ -79,6 +77,11 @@ tr:nth-child(even) {
 }
 
 </style>
+
+<!-- ZA BUTTON PDF -->
+<!-- link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" -->
+
+
 <center><h1><i><a class="active" href="index.php">Podjetje d.o.o.</a></i></h1></center>
 
 <p><div><ul>
@@ -94,118 +97,63 @@ tr:nth-child(even) {
 <center><h2><i>Podrobnosti verzije</i></h2></center>
 
 <?php
+$verzija_id = $idVerz;
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "praktikum";
-  
-$db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
+$privolitve =new Privolitev(null);
+$version = new Verzija(null, null);
+$poob = new Pooblascenec(null, null, null);
+$upra = new Upravljalec(null, null, null, null);
+$checkbox= new Checkbox(null, null);
 
-?>
+$current_version = $version->getIzBazeV($verzija_id);
+$poob_id = $current_version->getPoob();
+$privolitev_id = $current_version->getFK_ver_priv();
+$current_upra = $upra->getIzBaze($privolitev_id);
+$current_privolitve= $privolitve->getIzBazeId($privolitev_id);
+//$checkbox_id= $current_version->  MISLIM DA ŠE NI METODE
+$current_checkbox= $checkbox->getVseCheckboxe($fk);
 
-<?php 
-$_SESSION['current_user']=1;
-$nekaj=$_SESSION['current_user']=1;
-$query = "SELECT privolitve.naslov, verzija.verzija, verzija.text, 
-                upravljalec.ime, upravljalec.priimek, upravljalec.naslov, 
-                pooblascenec.ime, pooblascenec.priimek, pooblascenec.naslov
-            FROM privolitve, verzija, upravljalec, pooblascenec
-            WHERE verzija.FK_ver_priv=privolitve.id 
-            AND upravljalec.FK_upr_priv=privolitve.id
-            AND verzija.FK_ver_poob=pooblascenec.id
-            AND verzija.id='$idVerz'";
+echo "<br> Naslov privolitve: <br>";
+echo $current_privolitve->getNaslov();
 
-$result = mysqli_query($db_server, $query);
+echo "<p><b> Verzija: </b>";
+echo $current_version->getVerzija();
+echo "<p><b> Besedilo: </b>";
+echo $current_version->getText();
 
-if (!$result)
-{
-	die ("Dostop do PB ni uspel");
-}
-else
-{
-	$st_vrstic = mysqli_num_rows($result);
-	if($st_vrstic > 0) 
-		print('');
-}
+echo "<p><b> Ime upravljalca: </b>";
+echo $current_upra->getName();
+echo "<p><b> Priimek upravljalca: </b>";
+echo $current_upra->getSubname();
+echo "<p><b> Naslov upravljalca: </b>";
+echo $current_upra->getAddress();
 
-
-
-?>
-
-<p>	
-
-<?php 
-
-
-for ($j = 0 ; $j < $st_vrstic ; ++$j)
-{
-	$vrsta = mysqli_fetch_row($result); 
-	
-	echo "<b>Naslov privolitve: </b>".$vrsta[0];
-	
-?>
-<p>	
-<?php 
-
-	echo "<b>Verzija: </b>".$vrsta[1];
-	
-?>
-<p>
-<?php 
-
-	echo "<b>Besedilo: </b>".$vrsta[2];
-
-?>
-<p>	
-<?php 
-
-	echo "<b>Ime uporavljalca: </b>".$vrsta[3];
-	
-?>
-
-<p>	
-<?php 
-
-	echo "<b>Priimek uporavljalca: </b>".$vrsta[4];
-	
-?>
-
-<p>	
-<?php 
-
-	echo "<b>Naslov uporavljalca: </b>".$vrsta[5];
-	
-?>
-
-<p>	
-<?php 
-
-	echo "<b>Ime pooblascenca: </b>".$vrsta[6];
-	
-?>
-
-<p>	
-<?php 
-
-	echo "<b>Priimek pooblascenca: </b>".$vrsta[7];
-	
-?>
-
-<p>	
-<?php 
-
-	echo "<b>Naslov pooblascenca: </b>".$vrsta[8];
-	
-
+if($poob_id !== NULL){
+    $current_poob = $poob->getIzBazePoob($poob_id);
+    echo "<p><b> Ime pooblascenca: </b>";
+    echo $current_poob->getIme();
+    echo "<p><b> Priimek pooblascenca: </b>";
+    echo $current_poob->getPriimek();
+    echo "<p><b> Naslov pooblascenca: </b>";
+    echo $current_poob->getNaslov();
 }
 
+if($checkbox_id !== NULL){
+    $current_checkbox = $checkbox->getVseCheckboxe($fk);
+    echo "<p><b> Checkbox: </b>";
+    //echo $current_checkbox->;
+   
+}
 
 ?>
 </p>
 
-<center><form action="list.php" method="post">
-<input type="submit" name="podrPriv" value="Nazaj na seznam!">
+<center><form action="pdf_file.php" method="post">
+<input type="submit" name="pdfPrivVerz" value="Izvozi v PDF" class="w3-btn w3-white w3-border w3-border-red w3-round-large">
+</form></center>
+
+<p><center><form action="pregledVerzij.php" method="post">
+<input type="submit" name="podrPriv" value="Nazaj na seznam verzij">
 </form></center>
 
 
