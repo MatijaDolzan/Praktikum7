@@ -64,71 +64,72 @@ echo 'Oznacite checkboxe:';
 }
 
 if ($chbx1->getCheckbox()!="") {
-    ?>
-    <input type="checkbox" name="chxb1" value="<?php echo $chbx1->getCheckbox()?>"/>
+    ?><?php echo $chbx1->getCheckbox()?>
+    <input type="checkbox" name="chxb1" value=""/>
     <?php 
 }
 ?>
 <?php
 if ($chbx2->getCheckbox()!="") {
     ?>
-    <input type="checkbox" name="chxb2" value="<?php echo $chbx2->getCheckbox()?>"/>
+    <?php echo $chbx2->getCheckbox()?>
+    <input type="checkbox" name="chxb2" value=""/>
     <?php 
 }
 ?>
 <?php
 if ($chbx3->getCheckbox()!="") {
-    ?>
-    <input type="checkbox" name="chxb3" value="<?php echo $chbx3->getCheckbox()?>"/>
+    ?><?php echo $chbx3->getCheckbox()?>
+    <input type="checkbox" name="chxb3" value=""/>
     <?php 
 }
 ?>
 <?php
 if ($chbx4->getCheckbox()!="") {
-    ?>
-    <input type="checkbox" name="chxb4" value="<?php echo $chbx4->getCheckbox()?>"/>
+    ?><?php echo $chbx4->getCheckbox()?>
+    <input type="checkbox" name="chxb4" value=""/>
     <?php 
 }
 ?>
 <?php
 if ($chbx5->getCheckbox()!="") {
-    ?>
-    <input type="checkbox" name="chxb5" value="<?php echo $chbx5->getCheckbox()?>"/>
+    ?><?php echo $chbx5->getCheckbox()?>
+    <input type="checkbox" name="chxb5" value=""/>
     <?php 
 }
 ?>
 <?php
 if ($chbx6->getCheckbox()!="") {
-    ?>
-    <input type="checkbox" name="chxb6" value="<?php echo $chbx6->getCheckbox()?>"/>
+    ?><?php echo $chbx6->getCheckbox()?>
+    <input type="checkbox" name="chxb6" value=""/>
     <?php 
 }
 ?>
 <?php
 if ($chbx7->getCheckbox()!="") {
-    ?>
-    <input type="checkbox" name="chxb7" value="<?php echo $chbx7->getCheckbox()?>"/>
+    ?><?php echo $chbx7->getCheckbox()?>
+    <input type="checkbox" name="chxb7" value=""/>
     <?php 
 }
 ?>
 <?php
 if ($chbx8->getCheckbox()!="") {
-    ?>
-    <input type="checkbox" name="chxb8" value="<?php echo $chbx8->getCheckbox()?>"/>
+    ?><?php echo $chbx8->getCheckbox()?>
+    <input type="checkbox" name="chxb8" value=""/>
     <?php 
 }
 ?>
 <?php
 if ($chbx9->getCheckbox()!="") {
-    ?>
-    <input type="checkbox" name="chxb9" value="<?php echo $chbx9->getCheckbox()?>"/>
+    ?><?php echo $chbx9->getCheckbox()?>
+    <input type="checkbox" name="chxb9" value=""/>
     <?php 
 }
 ?>
 <?php
 if ($chbx10->getCheckbox()!="") {
-    ?>
-    <input type="checkbox" name="chxb10" value="<?php echo $chbx10->getCheckbox()?>"/>
+    ?><?php echo $chbx10->getCheckbox()?>
+    <input type="checkbox" name="chxb10" value=""/>
     <?php 
 }
 ?>
