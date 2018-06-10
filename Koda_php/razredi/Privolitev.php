@@ -57,6 +57,33 @@ class Privolitev implements Iprivolitev {
         }
        
     }
+    public function getIzBazeId($id){
+        $isci=$id;
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "praktikum";
+        $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
+        $query = "SELECT * FROM privolitve where id='$isci';";
+        $result = mysqli_query($db_server, $query);
+        if (!$result)
+        {
+            die ("Dostop do PB ni uspel");
+        }
+        else
+        {
+            $st_vrstic = mysqli_num_rows($result);
+            if($st_vrstic > 0){
+                $vrstica = mysqli_fetch_row($result);
+                $staraPriv=new Privolitev($vrstica[1]);
+                $staraPriv->setId($vrstica[0]);
+                $staraPriv->setUpor($vrstica[2]);
+                $staraPriv->setNaslov($vrstica[0]);
+                return $staraPriv;
+            }
+        }
+        
+    }
 
     public function getIzBazeVse(){
         

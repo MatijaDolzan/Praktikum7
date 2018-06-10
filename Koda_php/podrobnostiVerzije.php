@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 
 //echo $_SESSION["izbranaVerzijaSes"];
@@ -155,5 +155,12 @@ if($poob_id !== NULL){
 <p><center><form action="pregledVerzij.php" method="post">
 <input type="submit" name="podrPriv" value="Nazaj na seznam verzij">
 </form></center>
+<center>
+<form action="podpisovanje.php" method="get" name="podpisovanje">
+<input type="text"  name="privolitev" value="<?php echo $privolitev_id?>">
+<input type="text"  name="verzija" value="<?php echo $current_version ?>">
+<input type="submit"  value="Pridobi povezavo za podpis privolitve">
+</form>
+</center>
 
 
