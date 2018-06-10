@@ -158,7 +158,7 @@ if($poob_id !== NULL){
 <center>
 <form action="podpisovanje.php" method="get" name="podpisovanje">
 <input type="text"  name="privolitev" value="<?php echo $privolitev_id?>">
-<input type="text"  name="verzija" value="<?php echo $current_version ?>">
+<input type="text"  name="verzija" value="<?php echo $current_version->getId() ?>">
 <input type="submit"  value="Pridobi povezavo za podpis privolitve">
 </form>
 </center>
