@@ -2,10 +2,10 @@
 
 session_start();
 if(isset($_SESSION['sign_error'])){
-    if($_SESSION['returnurl'] === FALSE){   
+    if($_SESSION['returnurl'] === FALSE){
     }else{
         $returnurl = $_SESSION['returnurl'] . "?success=false";
-?>
+        ?>
 <form action="<?php echo $returnurl;?>" method="post">
 <input type='submit' name='submit' value='Vrni se' class='login' />
 </form>

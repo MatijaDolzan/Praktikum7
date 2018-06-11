@@ -5,27 +5,6 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['email']))) {
     require 'razredi/Boolbox.php';
     
     $email = $_POST['email'];
-
-    if (getenv('HTTP_CLIENT_IP')){
-        $ipaddress = getenv('HTTP_CLIENT_IP');
-    }else if(getenv('HTTP_X_FORWARDED_FOR')){
-        $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
-    }else if(getenv('HTTP_X_FORWARDED')){
-        $ipaddress = getenv('HTTP_X_FORWARDED');
-    }else if(getenv('HTTP_FORWARDED_FOR')){
-        $ipaddress = getenv('HTTP_FORWARDED_FOR');
-    }else if(getenv('HTTP_FORWARDED')){
-        $ipaddress = getenv('HTTP_FORWARDED');
-    }else if(getenv('REMOTE_ADDR')){
-        $ipaddress = getenv('REMOTE_ADDR');
-    }else{
-        $ipaddress = 'UNKNOWN';
-    }
-    if ($ipaddress === 'UNKNOWN'){
-        $_SESSION['sign_error'] = "We cannot read your IP Address. Without it - the agreement is void.";
-        header("Location: podpisovanje.php");
-        exit();
-    }
     $ip = $_SERVER['REMOTE_ADDR'];
     $fk_ver = $_POST['verzija'];
     
