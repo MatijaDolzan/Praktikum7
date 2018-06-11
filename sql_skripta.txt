@@ -5,6 +5,23 @@ CREATE TABLE Uporabnik(
     password varchar(255)
   
 );
+CREATE TABLE IF NOT EXISTS `boolbox` (
+
+  	`id` int(11) NOT NULL AUTO_INCREMENT,
+  
+	`agreed` tinyint(1) NOT NULL,
+  
+	`fk_checkbox` int(11) NOT NULL,
+  
+	`fk_podpisnik` int(11) NOT NULL,
+  
+	PRIMARY KEY (`id`),
+  
+	KEY `fk_checkbox` (`fk_checkbox`),
+  
+	KEY `fk_podpisnik` (`fk_podpisnik`)
+
+);
 CREATE TABLE Privolitve(
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	naslov varchar(255) NOT NULL,
