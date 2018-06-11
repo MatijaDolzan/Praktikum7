@@ -52,11 +52,12 @@ class Checkbox {
         $this->fk_che_ver = $fk_che_ver;
     }
 
-    function Checkbox($checkbox,$fk_che_ver) {
-        $this->id = null;
+    function Checkbox($id=null, $checkbox,$fk_che_ver) {
+        $this->id = $id;
         $this->checkbox=$checkbox;
         $this->fk_che_ver=$fk_che_ver;
     }
+    
     //Dodaja checkboxe v bazo pri doloceni verziji
     public function addCheckbox(Checkbox $check){
         $vrednost = $check->getCheckbox();
@@ -82,7 +83,7 @@ class Checkbox {
             $array=array();
             for ($j=0;$j<$st_vrstic;$j++) {
                 $vrstica = mysqli_fetch_row($result);
-                $ch=new Checkbox($vrstica[1], $vrstica[2]);
+                $ch=new Checkbox($vrstica[0], $vrstica[1], $vrstica[2]);
                 array_push($array, $ch);
             }
             $_SESSION['countArray']=count($array);

@@ -6,7 +6,7 @@ class Podpisnik {
     private $cas;
     private $fk_ver;
     
-    function Podpisnik($id, $email, $ip, $cas, $fk_ver) {
+    function Podpisnik($id=null, $email=null, $ip=null, $cas=null, $fk_ver=null) {
         $this->id = $id;
         $this->email=$email;
         $this->ip=$ip;  
@@ -133,16 +133,18 @@ class Podpisnik {
     public function addPodpisnik(Podpisnik $sign){
         $sign_email = $sign->getEmail();
         $sign_ip = $sign->getIp();
-        $sign_cas = $sign->getCas();
         $sign_fk_ver = $sign->getFk_ver();
         $connection = mysqli_connect("localhost", "root", "", "praktikum") OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
-        $sql = "INSERT INTO podpisnik (email, ip_add, cas, fk_pod_ver) VALUES ('$sign_email', '$sign_ip', '$sign_cas', '$sign_fk_ver');";
+        $sql = "INSERT INTO podpisnik (email, ip_add, cas, fk_pod_ver) VALUES ('$sign_email', '$sign_ip', NOW(), '$sign_fk_ver');";
         $result = mysqli_query($connection, $sql);
-        mysqli_close($connection);
         if ($result === FALSE){
+            mysqli_close($connection);
             return FALSE;
         }else{
-            return TRUE;
+            $sign_id = mysqli_insert_id($connection);
+            mysqli_close($connection);
+            $sign->setId($sign_id);
+            return $sign;
         }
     }
     
