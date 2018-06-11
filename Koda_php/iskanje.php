@@ -1,5 +1,8 @@
 <?php
-include ("menu.php")
+require 'menu.php';
+require 'check_user.php';
+$currentUser=$_SESSION['current_user'];
+
 ?>
 
 <center><h2><i>Iskanje po e-mailu podpisnika: </i></h2>
@@ -39,14 +42,8 @@ function highlight_word( $content, $word) {
     $content = str_replace( $word, $replace, $content ); // replace content
     return $content; // return highlighted data
 }
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "praktikum";
-
-$db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
-
+require 'db_connection.php';
+$db_server = $connection;
 ?>
  
  
@@ -98,10 +95,11 @@ $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die
                     AND uporabnik.email LIKE'%$search%' 
                     ";
     	*/
-    	$query =      "SELECT podpisnik.email, privolitve.naslov, verzija.verzija, podpisnik.ip_add, podpisnik.cas 
+    	$query =      "SELECT podpisnik.email, privolitve.naslov, verzija.verzija, podpisnik.ip_add, podpisnik.cas, podpisnik.id 
     	               FROM privolitve, verzija, podpisnik 
     	               WHERE verzija.FK_ver_priv=privolitve.id 
     	               AND podpisnik.FK_pod_ver=verzija.id 
+                       AND privolitve.FK_priv_upo='$currentUser'
     	               AND podpisnik.email LIKE '%$search%'
                     ";
     	
@@ -138,7 +136,7 @@ $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die
 
 	<div class="jumbotron">
 	<p><center><table cellspacing="0">
-		<tr> <strong><i>E-mail: </i></strong><?php echo highlight_word($row[0], $search); ?><br></tr>
+		<tr> <strong><i><a href="podrobnostiPodpisnika_worker.php?id=<?php echo $row[5];?>">E-mail: </a></i></strong><?php echo highlight_word($row[0], $search); ?><br></tr>
 		<tr> <strong><i>Naslov privolitve: </i></strong><?php echo highlight_word($row[1], $search);?><br></tr >
 		<tr> <strong><i>Verzija: </i></strong><?php echo highlight_word($row[2], $search);?><br></tr>		
 		<tr> <strong><i>IP: </i></strong><?php echo highlight_word($row[3], $search);?><br></tr>
