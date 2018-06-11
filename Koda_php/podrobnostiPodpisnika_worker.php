@@ -8,17 +8,19 @@ require 'razredi/Verzija.php';
 
 session_start();
 
-$podpisnik_id = $_POST['id'] = 1;
+$podpisnik_id = $_GET['id'];
 $pod = new Podpisnik();
 $priv = new Privolitev(null);
 $verz = new Verzija(null, null);
-$check = new Checkbox(null, null);
+$check = new Checkbox(null, null, null);
 $boolbox = new Boolbox();
 
-$current_priv = $priv->getIzBazeId($privolitev_id);
+
 $current_pod = $pod->getPodpisnikViaId($podpisnik_id);
 $verzija_id = $current_pod->getFk_ver();
 $current_verz = $verz->getIzBazeV($verzija_id);
+$privolitev_id = $current_verz->getFK_ver_priv();
+$current_priv = $priv->getIzBazeId($privolitev_id);
 $current_checkboxes = $check->getVseCheckboxe($verzija_id);
 $current_boolboxes = $boolbox->getBoolboxViaFk($podpisnik_id);
 
@@ -30,3 +32,4 @@ $_SESSION['boolboxes']=$current_boolboxes;
 
 header("Location: podrobnostiPodpisnika.php");
 exit();
+?>

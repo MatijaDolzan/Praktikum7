@@ -78,7 +78,6 @@ class Privolitev implements Iprivolitev {
                 $staraPriv=new Privolitev($vrstica[1]);
                 $staraPriv->setId($vrstica[0]);
                 $staraPriv->setUpor($vrstica[2]);
-                $staraPriv->setNaslov($vrstica[0]);
                 return $staraPriv;
             }
         }
