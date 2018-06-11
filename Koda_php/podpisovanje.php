@@ -84,84 +84,76 @@ echo 'Oznacite checkboxe:';
 }
 
 if ($chbx1->getCheckbox()!="") {
-    ?>
+ echo $chbx1->getCheckbox();?>
     <input type="checkbox" name="chxb1" value="<?php echo $chbx1->getCheckbox()?>"/>
     <input type="hidden" name="chxb1_id" value="<?php echo $chbx1->getId()?>"/>
-    <?php 
+<?php 
 }
-?>
-<?php
+
 if ($chbx2->getCheckbox()!="") {
-    ?>
+ echo $chbx2->getCheckbox();?>
     <input type="checkbox" name="chxb2" value="<?php echo $chbx2->getCheckbox()?>"/>
     <input type="hidden" name="chxb2_id" value="<?php echo $chbx2->getId()?>"/>
-    <?php 
+<?php 
 }
-?>
-<?php
+
 if ($chbx3->getCheckbox()!="") {
-    ?>
+echo $chbx3->getCheckbox();?>
     <input type="checkbox" name="chxb3" value="<?php echo $chbx3->getCheckbox()?>"/>
     <input type="hidden" name="chxb3_id" value="<?php echo $chbx3->getId()?>"/>
-    <?php 
-}
-?>
 <?php
+}
+
 if ($chbx4->getCheckbox()!="") {
-    ?>
+echo $chbx4->getCheckbox();?>
     <input type="checkbox" name="chxb4" value="<?php echo $chbx4->getCheckbox()?>"/>
     <input type="hidden" name="chxb4_id" value="<?php echo $chbx4->getId()?>"/>
-    <?php 
+<?php 
 }
-?>
-<?php
+
 if ($chbx5->getCheckbox()!="") {
-    ?>
+echo $chbx5->getCheckbox();?>
     <input type="checkbox" name="chxb5" value="<?php echo $chbx5->getCheckbox()?>"/>
     <input type="hidden" name="chxb5_id" value="<?php echo $chbx5->getId()?>"/>
-    <?php 
+<?php 
 }
-?>
-<?php
+
 if ($chbx6->getCheckbox()!="") {
-    ?>
+echo $chbx6->getCheckbox();?>
     <input type="checkbox" name="chxb6" value="<?php echo $chbx6->getCheckbox()?>"/>
     <input type="hidden" name="chxb6_id" value="<?php echo $chbx6->getId()?>"/>
-    <?php 
+<?php 
 }
-?>
-<?php
+
 if ($chbx7->getCheckbox()!="") {
-    ?>
+echo $chbx7->getCheckbox();?>
     <input type="checkbox" name="chxb7" value="<?php echo $chbx7->getCheckbox()?>"/>
     <input type="hidden" name="chxb7_id" value="<?php echo $chbx7->getId()?>"/>
-    <?php 
+<?php 
 }
-?>
-<?php
+
 if ($chbx8->getCheckbox()!="") {
-    ?>
+echo $chbx8->getCheckbox();?>
     <input type="checkbox" name="chxb8" value="<?php echo $chbx8->getCheckbox()?>"/>
     <input type="hidden" name="chxb8_id" value="<?php echo $chbx8->getId()?>"/>
-    <?php 
+<?php 
 }
-?>
-<?php
+
 if ($chbx9->getCheckbox()!="") {
-    ?>
+echo $chbx9->getCheckbox();?>
     <input type="checkbox" name="chxb9" value="<?php echo $chbx9->getCheckbox()?>"/>
     <input type="hidden" name="chxb9_id" value="<?php echo $chbx9->getId()?>"/>
-    <?php 
+<?php 
 }
-?>
-<?php
+
 if ($chbx10->getCheckbox()!="") {
-    ?>
+echo $chbx10->getCheckbox();?>
     <input type="checkbox" name="chxb10" value="<?php echo $chbx10->getCheckbox()?>"/>
     <input type="hidden" name="chxb10_id" value="<?php echo $chbx10->getId()?>"/>
-    <?php 
+<?php 
 }
 ?>
+
 upravljalec:<?php echo $upravljalec->getName() +', '+$upravljalec->getSubname()+', '+$upravljalec->getAddress()?>
 <?php if ($pooblascenec->getIme()!="" && $pooblascenec->getPriimek()!="" && $pooblascenec->getNaslov()!=""){?>
 Pooblascenec:<?php echo $pooblascenec->getIme() +', '+$pooblascenec->getPriimek()+', '+$pooblascenec->getNaslov()?>
