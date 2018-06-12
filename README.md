@@ -19,6 +19,8 @@ Bonus: Zavarovanje dokazov o privolitvi v verigi blokov
 
 ## E-R diagram
 ![erbaze](https://user-images.githubusercontent.com/39340895/40721340-82bf37c4-6419-11e8-8167-c570c87d9d74.png)
+![e-r_diagram](https://user-images.githubusercontent.com/39340999/41291519-3752d570-6e50-11e8-8542-7def768cebc5.png)
+
 
 
 ## Navodila za namestitev
