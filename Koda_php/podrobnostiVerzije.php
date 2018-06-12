@@ -17,6 +17,7 @@ require    'razredi\Privolitev.php';
 require    'razredi\Verzija.php';
 require    'razredi\Pooblascenec.php';
 require    'razredi\Upravljalec.php';
+require    'razredi\Checkboxi.php';
 
 $idVerz=0;
 if(!empty($_SESSION['izbranaVerzijaSes'])){
@@ -103,15 +104,16 @@ $privolitve =new Privolitev(null);
 $version = new Verzija(null, null);
 $poob = new Pooblascenec(null, null, null);
 $upra = new Upravljalec(null, null, null, null);
-//$checkbox= new Checkbox(null, null);
+$ch= new Checkbox("","", "");
 
 $current_version = $version->getIzBazeV($verzija_id);
 $poob_id = $current_version->getPoob();
 $privolitev_id = $current_version->getFK_ver_priv();
 $current_upra = $upra->getIzBaze($privolitev_id);
 $current_privolitve= $privolitve->getIzBazeId($privolitev_id);
-//$checkbox_id= $current_version->  MISLIM DA ŠE NI METODE
-//$current_checkbox= $checkbox->getVseCheckboxe($fk);
+$arrayCheckboxov=Array();
+$arrayCheckboxov=$ch->getVseCheckboxe($verzija_id);
+
 
 echo "<br><b> Naslov privolitve: </b>";
 echo $current_privolitve->getNaslov();
@@ -128,7 +130,7 @@ echo $current_upra->getSubname();
 echo "<p><b> Naslov upravljalca: </b>";
 echo $current_upra->getAddress();
 
-if($poob_id !== NULL){
+if($poob_id!=0){
     $current_poob = $poob->getIzBazePoob($poob_id);
     echo "<p><b> Ime pooblascenca: </b>";
     echo $current_poob->getIme();
@@ -138,12 +140,15 @@ if($poob_id !== NULL){
     echo $current_poob->getNaslov();
 }
 
-//if($checkbox_id !== NULL){
-//    $current_checkbox = $checkbox->getVseCheckboxe($fk);
-//    echo "<p><b> Checkbox: </b>";
-    //echo $current_checkbox->;
-   
-//}
+if($_SESSION['countArray']!=0){
+    echo "<p><b> Checkbox: </b>";
+    foreach ($arrayCheckboxov as $ar){
+        
+        echo $ar->getCheckbox();
+        echo '<br/>';
+    }
+    
+}
 
 ?>
 </p>
@@ -157,8 +162,8 @@ if($poob_id !== NULL){
 </form></center>
 <center>
 <form action="podpisovanje.php" method="get" name="podpisovanje">
-<input type="text"  name="privolitev" value="<?php echo $privolitev_id?>">
-<input type="text"  name="verzija" value="<?php echo $current_version->getId() ?>">
+<input type="text" hidden  name="privolitev" value="<?php echo $privolitev_id?>">
+<input type="text" hidden  name="verzija" value="<?php echo $current_version->getId() ?>">
 <input type="submit"  value="Pridobi povezavo za podpis privolitve">
 </form>
 </center>
