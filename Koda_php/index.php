@@ -1,9 +1,5 @@
-
-<?php ini_set('default_charset', 'UTF-8');
-header('Content-type', 'text/html; charset=UTF-8');
-
+<?php
 include ("menu.php");
-
 ?>
 
 
