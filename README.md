@@ -105,7 +105,7 @@ INSERT INTO `checkbox`(`id`, `checkbox`, `FK_che_ver`) VALUES (NULL, 'Checkbox 1
 ```
 
 * Inštaliramo si: Eclipse IDE for Java EE Developers (to je Eclipse Oxygen for Java EE) - http://www.eclipse.org/downloads/eclipse-packages/
-* Nato določimo workspace za mapo našega php projekta in sicer tukaj: C:\wamp\www\
+* Nato določimo workspace za mapo našega php projekta in sicer tukaj, če imamo 32-bitni wamp: C:\wamp\www\ ALI C:\wamp64\www\ v primeru, da imamo 64-bitni Wamp
 * V Eclipse moramo vključiti tole: https://marketplace.eclipse.org/content/php-development-tools na tem linku najdemo gumb Install in le tega povlečemo v naš Eclipse
 * Ustvarimo nov PHP Project. Ime našega php projekta je: Praktikum
 * nato pa v to mapo noter prekopiramo kodo, ki je na githubu u mapi Praktikum
