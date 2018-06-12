@@ -6,7 +6,7 @@ CREATE TABLE Uporabnik(
   
 );
 CREATE TABLE IF NOT EXISTS `boolbox` (
-	id int(11) NOT NULL AUTO_INCREMENT,
+	id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   	agreed tinyint(1) NOT NULL,
   	FK_bol_che int(11) NOT NULL,
   	FK_bol_pod int(11) NOT NULL
