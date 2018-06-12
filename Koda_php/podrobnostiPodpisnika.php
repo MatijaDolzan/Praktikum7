@@ -47,4 +47,15 @@ if($checkboxes === FALSE){
 }
 
 ?>
-<a href="podrobnostiVerzije_worker.php?id=<?php $verzija->getId();?>">Pregled verzije</a>
+
+<form action="podrobnostiVerzije_worker.php" method="post">
+<input type="hidden" name="id" value="<?php echo $verzija->getId();?>">
+<input type="submit" value="Pregled verzije">
+</form>
+
+<form action="export.php" method="post">
+<input type="hidden" name="export_id_podp" value="<?php echo $podpisnik->getId();?>">
+<input type="submit" value="Izvozi v PDF">
+</form>
+    
+    

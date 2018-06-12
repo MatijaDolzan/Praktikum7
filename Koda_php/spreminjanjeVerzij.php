@@ -22,11 +22,11 @@ $_SESSION['verzijaVerzije']=$NovaV->getVerzija();
 $poob=new Pooblascenec("", "", "");
 $pooblascenec=new Pooblascenec("", "", "");
 if($idPooblascenca!=0){
-   $pooblascenec=$poob->getIzBazePoob($idPooblascenca);
+    $pooblascenec=$poob->getIzBazePoob($idPooblascenca);
     
 }
 $arr=array(10);
-$ch=new Checkbox("","");
+$ch=new Checkbox(null, "","");
 $id=$NovaV->getId();
 $array=$ch->getVseCheckboxe($id);
 $count=count($array);
@@ -36,9 +36,9 @@ for ($j=0;$j<10;$j++){
         $arr[$j]=$ch;
     }
     else{
-        $arr[$j]=new Checkbox("", "");
+        $arr[$j]=new Checkbox(null, "", "");
     }
-   
+    
     
 }
 
