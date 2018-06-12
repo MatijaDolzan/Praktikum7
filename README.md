@@ -36,12 +36,22 @@ CREATE TABLE Uporabnik(
     password varchar(255)
   
 );
+
+CREATE TABLE Boolbox (
+	id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  	agreed tinyint(1) NOT NULL,
+  	FK_bol_che int(11) NOT NULL,
+  	FK_bol_pod int(11) NOT NULL
+
+);
+
 CREATE TABLE Privolitve(
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	naslov varchar(255) NOT NULL,
 	FK_priv_upo int NOT NULL
   
 );
+
 CREATE TABLE Upravljalec(	
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	ime varchar(255) NOT NULL,
@@ -50,6 +60,7 @@ CREATE TABLE Upravljalec(
 	FK_upr_priv int
   
 );
+
 CREATE TABLE Verzija(
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT ,
 	verzija int NOT NULL,
@@ -59,6 +70,7 @@ CREATE TABLE Verzija(
 	FK_ver_poob int
   
 );
+
 CREATE TABLE Podpisnik(
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	email varchar(255) NOT NULL,
@@ -66,6 +78,7 @@ CREATE TABLE Podpisnik(
 	cas DATETIME NOT NULL,
 	FK_pod_ver int NOT NULL
 );
+
 CREATE TABLE Pooblascenec(	
 	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	ime varchar(255) NOT NULL,
@@ -73,6 +86,21 @@ CREATE TABLE Pooblascenec(
 	naslov varchar(255) NOT NULL
   
 );
+
+CREATE TABLE Checkbox(	
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	checkbox varchar(255) NOT NULL,
+	FK_che_ver int NOT NULL
+  
+);
+
+INSERT INTO `uporabnik` (`id`, `username`, `email`, `password`) VALUES (NULL, 'admin', 'admin', 'admin');
+INSERT INTO `podpisnik` (`id`, `email`, `ip_add`, `cas`, `FK_pod_ver`) VALUES (NULL, 'admin', '000.000.0.0', '2018-05-18 06:00:00', '1');
+INSERT INTO `privolitve` (`id`, `naslov`, `FK_priv_upo`) VALUES (NULL, 'Privolitev 1', '1');
+INSERT INTO `upravljalec` (`id`, `ime`, `priimek`, `naslov`,`FK_upr_priv`) VALUES (NULL, 'matija', 'dolzan', 'feri','1');
+INSERT INTO `verzija` (`id`, `verzija`, `text`, `rok_hrambe`, `FK_ver_priv`,`FK_ver_poob`) VALUES (NULL, '1', 'To je prva verzija privolitve 1.', '2018-06-21', '1', '1');
+INSERT INTO `pooblascenec`(`id`, `ime`, `priimek`, `naslov`) VALUES (NULL, 'laura', 'ekart', 'feri');
+INSERT INTO `checkbox`(`id`, `checkbox`, `FK_che_ver`) VALUES (NULL, 'Checkbox 1', '1');
 ```
 
 * Inštaliramo si: Eclipse IDE for Java EE Developers (to je Eclipse Oxygen for Java EE) - http://www.eclipse.org/downloads/eclipse-packages/
