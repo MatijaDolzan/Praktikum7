@@ -22,7 +22,7 @@ Bonus: Zavarovanje dokazov o privolitvi v verigi blokov
 
 
 ## Navodila za namestitev
-Za delovanje potrebujemo: Wampserver (64-bitni), Eclipse Oxygen.
+Za delovanje potrebujemo: Wampserver (32-bitni ali 64-bitni), Eclipse Oxygen.
 
 ![wamp](https://user-images.githubusercontent.com/39340895/41030763-4fec2602-697f-11e8-9bbe-b4211ddbf92f.png)
 
