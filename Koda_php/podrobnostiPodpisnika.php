@@ -28,17 +28,21 @@ echo "<br>";
 echo "VERZIJA PODPISANE VERZIJE<br>";
 echo $verzija->getVerzija() . "<br>";
 if($checkboxes === FALSE){
-    
+    //DO NOTHING
 }else{
     echo "OPCIJSKE PRIVOLITVE:<br>";
     foreach ($checkboxes as $cb){
         echo $cb->getCheckbox() . "<br>";
-        foreach ($boolboxes as $bb){
-            if (($bb->getFk_checkbox()) === ($cb->getId())){
-                echo "PRIVOLIL";
+        if($boolboxes === FALSE){
+            //DO NOTHING
+        }else{
+            foreach ($boolboxes as $bb){
+                if (($bb->getFk_checkbox()) === ($cb->getId())){
+                    echo "PRIVOLIL";
+                }
             }
+            echo "<br>";
         }
-        echo "<br>";
     }
 }
 
