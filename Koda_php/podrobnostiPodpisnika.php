@@ -27,15 +27,20 @@ echo $privolitev->getNaslov() . "<br>";
 echo "<br>";
 echo "VERZIJA PODPISANE VERZIJE<br>";
 echo $verzija->getVerzija() . "<br>";
-echo "OPCIJSKE PRIVOLITVE:<br>";
-foreach ($checkboxes as $cb){
-    echo $cb->getCheckbox() . "<br>";
-    foreach ($boolboxes as $bb){
-        if (($bb->getFk_checkbox()) === ($cb->getId())){
-            echo "PRIVOLIL";
+if($checkboxes === FALSE){
+    
+}else{
+    echo "OPCIJSKE PRIVOLITVE:<br>";
+    foreach ($checkboxes as $cb){
+        echo $cb->getCheckbox() . "<br>";
+        foreach ($boolboxes as $bb){
+            if (($bb->getFk_checkbox()) === ($cb->getId())){
+                echo "PRIVOLIL";
+            }
         }
+        echo "<br>";
     }
-    echo "<br>";
 }
+
 ?>
 <a href="podrobnostiVerzije_worker.php?id=<?php $verzija->getId();?>">Pregled verzije</a>
