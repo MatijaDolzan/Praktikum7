@@ -4,10 +4,10 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['email']))) {
     require 'razredi/Podpisnik.php';
     require 'razredi/Boolbox.php';
     
-    $email = $_POST['email'];
+    $email = urldecode ($_POST['email']);
     $ip = $_SERVER['REMOTE_ADDR'];
     $fk_ver = $_POST['verzija'];
-    
+    $_SESSION['verzija']=$_POST['verzija'];
     
     $pod = new Podpisnik(null, $email, $ip, null, $fk_ver);
     $current_pod = new Podpisnik();
@@ -109,9 +109,8 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['email']))) {
                 exit();
             }
         }
-        $returnurl = $_SESSION['returnurl'] . "?success=true";
-        session_destroy();
-        header("Location: " . $returnUrl);
+        $_SESSION['returnprocess'] = TRUE;
+        header("Location: podpisovanje.php");
         exit();
     }
 }else{

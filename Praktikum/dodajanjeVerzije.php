@@ -3,14 +3,13 @@
 include ("header.php");
 include ("check_user.php");
 
-$uporabnik=$_SESSION['current_user'];
-$id=$_SESSION['idPrivolitve'];
-
 require   'razredi\Verzija.php';
 require_once  'razredi\Iprivolitev.php';
 require   'razredi\Upravljalec.php';
 require   'razredi\Pooblascenec.php';
 
+$uporabnik=$_SESSION['current_user'];
+$id=$_SESSION['idPrivolitve'];
 ?>
 
 <!DOCTYPE HTML>

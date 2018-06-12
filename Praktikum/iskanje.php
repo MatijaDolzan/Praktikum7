@@ -44,20 +44,19 @@ $currentUser=$_SESSION['current_user'];
 										</div>
 									</form>						
 										
-										<?php 
-										function highlight_word( $content, $word) {
-										    $replace = '<span style="background-color: 	#87CEFA;">' . $word . '</span>'; // create replacement
-										    $content = str_replace( $word, $replace, $content ); // replace content
-										    return $content; // return highlighted data
-										}
-										require 'db_connection.php';
-										$db_server = $connection;
-										?>
-                                     
-                                    	<?php
+                                    <?php 
+                                    function highlight_word( $content, $word) {
+                                        $replace = '<span style="background-color: 	#87CEFA;">' . $word . '</span>'; // create replacement
+                                        $content = str_replace( $word, $replace, $content ); // replace content
+                                        return $content; // return highlighted data
+                                    }
+                                    require 'db_connection.php';
+                                    $db_server = $connection;
+                                    
                                         if (isset($_POST['GumbIskanjeEmail']))
                                         {
                                         	$search=$_POST['inputIskanjaEmail'];
+                                    
                                         	$query =      "SELECT podpisnik.email, privolitve.naslov, verzija.verzija, podpisnik.ip_add, podpisnik.cas, podpisnik.id 
                                         	               FROM privolitve, verzija, podpisnik 
                                         	               WHERE verzija.FK_ver_priv=privolitve.id 
@@ -94,16 +93,14 @@ $currentUser=$_SESSION['current_user'];
 
 							<!-- Izpis -->
 								<section class="box">
-									<h3>Lists</h3>
+									<h3>Rezultati</h3>
 									
 										<div class="jumbotron">
                                     	<table>
-                                    		<tr> <strong><i><a href="podrobnostiPodpisnika_worker.php?id=<?php echo $row[5];?>">E-mail: </a></i></strong><?php echo highlight_word($row[0], $search); ?><br></tr>
-                                    		<tr> <strong><i>Naslov privolitve: </i></strong><?php echo highlight_word($row[1], $search);?><br></tr >
-                                    		<tr> <strong><i>Verzija: </i></strong><?php echo highlight_word($row[2], $search);?><br></tr>		
-                                    		<tr> <strong><i>IP: </i></strong><?php echo highlight_word($row[3], $search);?><br></tr>
-                                    		<tr> <strong><i>Datum podpisa: </i></strong><?php echo highlight_word($row[4], $search);?><br></tr>
-                                    	
+                                    		<tr> <td><strong><i>E-mail: </i></strong><?php echo highlight_word($row[0], $search); ?><br></td></tr>
+                                    		<tr> <td><strong><i>Naslov privolitve: </i></strong><?php echo highlight_word($row[1], $search);?><br></td></tr >
+                                    		<tr> <td><strong><i>Verzija: </i></strong><?php echo highlight_word($row[2], $search);?><br></td></tr>
+                                    		<tr> <td><strong><i><form method="post" action="podrobnostiPodpisnika_worker.php?id=<?php echo $row[5];?>"><input type="submit" value="Podrobnosti"></form></i></strong></td></tr>	
                                     	</table>
                                     	
                                     	<?php

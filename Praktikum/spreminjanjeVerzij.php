@@ -30,7 +30,7 @@ if($idPooblascenca!=0){
     
 }
 $arr=array(10);
-$ch=new Checkbox("","");
+$ch=new Checkbox(null, "","");
 $id=$NovaV->getId();
 $array=$ch->getVseCheckboxe($id);
 $count=count($array);
@@ -40,7 +40,7 @@ for ($j=0;$j<10;$j++){
         $arr[$j]=$ch;
     }
     else{
-        $arr[$j]=new Checkbox("", "");
+        $arr[$j]=new Checkbox(null, "", "");
     }
     
     
@@ -56,7 +56,6 @@ $chbx7=$arr[6];
 $chbx8=$arr[7];
 $chbx9=$arr[8];
 $chbx10=$arr[9];
-
 ?>
 
 

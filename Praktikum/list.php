@@ -33,19 +33,14 @@ if (isset($_SESSION['idPrivolitve'])){
 						<div class="12u">
 
 							<?php
-        
-                            $servername = "localhost";
-                            $username = "root";
-                            $password = "";
-                            $dbname = "praktikum";
+
+                            require 'db_connection.php';
                               
-                            $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
-                            
-                            
-                            
-                            $query = "select privolitve.id,privolitve.naslov, verzija.rok_hrambe, verzija.verzija
-                                        from privolitve,verzija 
-                                        where verzija.FK_ver_priv=privolitve.id 
+                            $db_server = $connection;
+                            $currentUser = $_SESSION['current_user'];
+                                
+                            $query = "SELECT privolitve.id,privolitve.naslov
+                                        FROM privolitve WHERE privolitve.FK_priv_upo = $currentUser
                                         GROUP BY privolitve.naslov";
                             
                             $result = mysqli_query($db_server, $query);
@@ -60,6 +55,7 @@ if (isset($_SESSION['idPrivolitve'])){
                             	if($st_vrstic > 0) 
                             		print('');
                             }
+                            
                             ?>
 							<!-- Table -->
 								<section class="box">
@@ -69,8 +65,7 @@ if (isset($_SESSION['idPrivolitve'])){
 											<thead>
 												<tr>
                                                     <th>Privolitev - naslov</th>
-                                                    <th>Dolzina hrambe</th>
-                                                    <th>Verzija</th>
+                                                    <th>Podrobnosti</th>
                                                   </tr>
 											</thead>
 											
@@ -90,17 +85,12 @@ if (isset($_SESSION['idPrivolitve'])){
         													</div>
         													<div class="row uniform 50%">
                         										<div class="12u">
-                        											<td><input class="button fit small" type="submit" name="izberiPrivolitev" value="<?php echo $vrsta[1]; ?>" /></td>
+                        											<td><?php echo $vrsta[1] ?></td>
                         										</div>
         													</div>
         													<div class="row uniform 50%">
                         										<div class="12u">
-                        											<td><?php echo $vrsta[2] ?></td>
-                        										</div>
-        													</div>
-        													<div class="row uniform 50%">
-                        										<div class="12u">
-                        											<td><?php echo $vrsta[3] ?></td>
+                        											<td><input type="submit" name="izberiPrivolitev" value="Izberi" /></td>
                         										</div>
         													</div>
                                           				</form>

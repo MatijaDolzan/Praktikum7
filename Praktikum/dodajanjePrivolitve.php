@@ -2,12 +2,10 @@
 include ("header.php");
 include ("check_user.php");
 
-    $uporabnik=null;
-    //$uporabnik=$_SESSION['current_user'];
-    $_SESSION['current_user']=1;
-
 require    'razredi\Privolitev.php';
 require_once   'razredi\Iprivolitev.php';
+$uporabnik=$_SESSION['current_user'];
+
 ?>
 
 
