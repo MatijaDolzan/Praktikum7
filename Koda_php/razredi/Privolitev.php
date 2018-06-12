@@ -57,6 +57,20 @@ class Privolitev implements Iprivolitev {
         }
        
     }
+    public function spremeniNaslov($privolitev){
+        $id=$privolitev->id;
+        $update=$privolitev->naslov;
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "praktikum";
+        $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
+        $query = "UPDATE privolitve SET naslov = '$update' WHERE id='$id';";
+        $result = mysqli_query($db_server, $query);
+        
+   
+        
+    }
     public function getIzBazeId($id){
         $isci=$id;
         $servername = "localhost";

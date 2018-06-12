@@ -5,8 +5,13 @@ require_once   '..\razredi\Iprivolitev.php';
 require   '..\razredi\Upravljalec.php';
 require   '..\razredi\Pooblascenec.php';
 require   '..\razredi\Checkboxi.php';
+require   '..\razredi\Privolitev.php';
 if(isset($_POST['dodajVerz'])){
 
+    $privolitev=new Privolitev("");
+    $privolitev->setNaslov($_POST['naslovPrivolitve']);
+    $privolitev->setId($_SESSION['izbranaPrivolitevSes']);
+    $privolitev->spremeniNaslov($privolitev);
     $text=$_POST['text'];
     $hramba=$_POST['hramba'];
     $verzija=new Verzija($text, $hramba);

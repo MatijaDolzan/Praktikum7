@@ -5,12 +5,15 @@ require_once  'razredi\Iprivolitev.php';
 require   'razredi\Upravljalec.php';
 require   'razredi\Pooblascenec.php';
 require   'razredi\Checkboxi.php';
+require   'razredi\Privolitev.php';
 
 $idVerz=$_SESSION["idVerzije"];
 
 $verzija=new Verzija("","");
 $NovaV=$verzija->getIzBazeV($idVerz);
 $idUpravljalca=$_SESSION["izbranaPrivolitevSes"];
+$privolitev=new Privolitev("");
+$pravaPriv=$privolitev->getIzBazeId($idUpravljalca);
 $upr=new Upravljalec('', "", "", "");
 $upravljalec=$upr->getIzBaze($idUpravljalca);
 $idPooblascenca=0;
@@ -51,8 +54,14 @@ $chbx9=$arr[8];
 $chbx10=$arr[9];
 
 ?>
-<h2>Spreminjanje verzije</h2>
+
+
+
 <form action="workerji/spreminjanjeVerzije_worker.php" method="post">
+<h2> Naslov <input type="text" name="naslovPrivolitve" value="<?php echo $pravaPriv->getNaslov()?>"/></h2>
+
+
+<h2>Spreminjanje verzije</h2>
 Text:<input type="text" name="text" value="<?php echo $NovaV->getText()?>"/><br>
 Rok hrambe: <input type="text" name="hramba" value="<?php echo $NovaV->getHramba()?>"/><br>
 <br/>
