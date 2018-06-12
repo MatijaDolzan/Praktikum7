@@ -1,6 +1,7 @@
 <?php
 require_once   '\Iprivolitev.php';
 class Verzija implements Iprivolitev {
+    private $id;
     private $verzija;
     private $text;
     private $hramba;
