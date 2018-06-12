@@ -105,10 +105,15 @@ INSERT INTO `checkbox`(`id`, `checkbox`, `FK_che_ver`) VALUES (NULL, 'Checkbox 1
 ```
 
 * Inštaliramo si: Eclipse IDE for Java EE Developers (to je Eclipse Oxygen for Java EE) - http://www.eclipse.org/downloads/eclipse-packages/
-* Nato določimo workspace za mapo našega php projekta in sicer tukaj: C:\wamp\www\
+* Nato določimo workspace za mapo našega php projekta in sicer tukaj, če imamo 32-bitni wamp: C:\wamp\www\ ALI C:\wamp64\www\ v primeru, da imamo 64-bitni Wamp
 * V Eclipse moramo vključiti tole: https://marketplace.eclipse.org/content/php-development-tools na tem linku najdemo gumb Install in le tega povlečemo v naš Eclipse
 * Ustvarimo nov PHP Project. Ime našega php projekta je: Praktikum
+* nato pa v to mapo noter prekopiramo kodo, ki je na githubu u mapi Praktikum
+* ko smo to naredili, v Eclipsu na mapi: GoogleAPI in tcpdf stisnemo desni klik
+![oznaceni knjiznici](https://user-images.githubusercontent.com/39340895/41307123-97febc40-6e78-11e8-9000-327c6c3c3109.png)
 
+* nato pa stisnemo *Use as Library Folder* - to je zelo pomembno, drugače ne bo delovalo
+![oznaceni knjiznici -oznaci kot](https://user-images.githubusercontent.com/39340895/41307269-01199b00-6e79-11e8-982a-3d4c23cb55d2.png)
 
 
 ### AVTORJI:
