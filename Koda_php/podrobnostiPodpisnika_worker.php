@@ -22,7 +22,12 @@ $current_verz = $verz->getIzBazeV($verzija_id);
 $privolitev_id = $current_verz->getFK_ver_priv();
 $current_priv = $priv->getIzBazeId($privolitev_id);
 $current_checkboxes = $check->getVseCheckboxe($verzija_id);
-$current_boolboxes = $boolbox->getBoolboxViaFk($podpisnik_id);
+if(count($current_checkboxes) === 0){
+    $current_checkboxes= FALSE;
+    $current_boolboxes= FALSE;
+}else{ 
+    $current_boolboxes = $boolbox->getBoolboxViaFk($podpisnik_id);
+}
 
 $_SESSION['podpisnik']=$current_pod;
 $_SESSION['privolitev']=$current_priv;
