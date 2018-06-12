@@ -1,7 +1,11 @@
 <?php
 session_start();
-include 'check_user.php';
+require 'check_user.php';
 require 'razredi/Uporabnik.php';
+
+if((isset($_SESSION['current_edit'])) && !(isset($_POST['edit']))){
+    unset($_SESSION['current_edit']);
+}
 
 if(isset($_POST['edit'])){
     
@@ -40,6 +44,14 @@ echo "Current Email: <br>";
 echo $current_user->getEmail() . "<br>";
 ?>
 
+
+<?php //CHECK ZA GOOGLE ACCOUNT?>
+
+<?php 
+if($gUser === FALSE){
+?>
+
+
 <?php //FORMA ZA SPREMINJANJE EMAIL-A ?>
 
 <?php
@@ -61,6 +73,12 @@ if((isset($_SESSION['current_edit'])) && ($_SESSION['current_edit'] === "email")
 <input type='submit' name='submit' value='Edit'/>
 </form>
 
+<?php 
+}else{
+    echo "Google Accounts cannot change their E-Mail adress manually. If you wish to do so - please contact our <a href='support.php'>Support Department</a>";
+}
+?>
+
 
 
 <?php
@@ -70,6 +88,7 @@ echo "Current Username: <br>";
 //VREDNOST UPORABNIKOVEGA USERNAME-A
 echo $current_user->getUsername() . "<br>";
 ?>
+
 
 <?php //FORMA ZA SPREMINJANJE USERNAME-A ?>
 
@@ -94,6 +113,13 @@ if((isset($_SESSION['current_edit'])) && ($_SESSION['current_edit'] === "usernam
 
 
 
+<?php //CHECK ZA GOOGLE ACCOUNT?>
+
+<?php 
+if($gUser === FALSE){
+?>
+
+
 <?php
 //SAMO ZA PREGLEDNOST
 echo "Password <br>";
@@ -101,10 +127,11 @@ echo "Password <br>";
 //VREDNOST UPORABNIKOVEGA PASSWORD-A NAMENOMA NI PRIKAZANO - MORDA PRIKAZEMO ********* NAMESTO TEGA?
 ?>
 
+
 <?php //FORMA ZA SPREMINJANJE PASSWORD-A ?>
 
 <?php
-if((isset($_SESSION['current_edit'])) && ($_SESSION['current_edit'] === "username")){
+if((isset($_SESSION['current_edit'])) && ($_SESSION['current_edit'] === "password")){
 ?>
 <form action="account_worker.php" method="post">
 <input hidden="true" type="text" value="password" name="edit">
@@ -121,6 +148,10 @@ if((isset($_SESSION['current_edit'])) && ($_SESSION['current_edit'] === "usernam
 <input hidden="true" type="text" value="password" name="edit">
 <input type='submit' name='submit' value='Edit'/>
 </form>
+
+<?php 
+}
+?>
 
 
 
