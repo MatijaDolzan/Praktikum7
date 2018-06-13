@@ -27,7 +27,8 @@ Za delovanje potrebujemo: Wampserver (32-bitni ali 64-bitni), Eclipse Oxygen.
 
 ![wamp](https://user-images.githubusercontent.com/39340895/41030763-4fec2602-697f-11e8-9bbe-b4211ddbf92f.png)
 
-* Potrebno si je namestiti Wampserver ter ko odpremo phpMyAmdmin je treba ustvariti new database z imenom "praktikum" 
+* Inštaliramo si Wampserver, link: https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.3_x64.exe/download
+* Po namestitvi Wampserver-ja odpremo phpMyAmdmin nato pa ustvarimo new database z imenom "praktikum" 
 * Nato pa v sql zapišemo sledeče:
 ```
 CREATE TABLE Uporabnik(
@@ -117,7 +118,7 @@ INSERT INTO `checkbox`(`id`, `checkbox`, `FK_che_ver`) VALUES (NULL, 'Checkbox 1
 
 * nato, ko imamo celotno kodo v mapi, stisnemo desni klik na datoteki index.php in stisnemo:
 ![index](https://user-images.githubusercontent.com/39340895/41349142-365e9216-6f0f-11e8-91c1-7e8974196fea.png)
-
+-> najbolje je sicer da v Google Chrome kopiramo tale link: http://localhost/Praktikum/index.php 
 
 ### AVTORJI:
 * Dolžan Matija 
