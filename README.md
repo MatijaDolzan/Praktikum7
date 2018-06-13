@@ -1,7 +1,7 @@
 # Zbiranje privolitev po GDPR
 *Praktikum II, projekt*
 
-Po novi Splošni uredbi o varstvu podatkov morajo upravljavci osebnih podatkov (tisti, ki zbirajo in obdelujejo podatke) posameznika seznaniti o tem katere podatke zbirajo, kako dolgo, na kakšni podlagi (za podlago glejte 1. odstavek člena 6 v http://eur-lex.europa.eu/legal-content/SL/TXT/HTML/?uri=CELEX:32016R0679&from=SL) in zbirati dokaze, da so posamezniki privolitev dali.
+Po novi Splošni uredbi o varstvu podatkov morajo upravljavci osebnih podatkov (tisti, ki zbirajo in obdelujejo podatke) posameznika seznaniti o tem katere podatke zbirajo, kako dolgo, na kakšni podlagi (za podlago glejte 1. odstavek člena 6 v `http://eur-lex.europa.eu/legal-content/SL/TXT/HTML/?uri=CELEX:32016R0679&from=SL)` in zbirati dokaze, da so posamezniki privolitev dali.
 
 Pripravite portal, ki bo omogočal enostavno zbiranje privolitev. Omogočati mora, da uporabnik vpiše besedilo (pogoje) obdelave podatkov. Uporabnika naj portal vzpodbuja k temu, da bo vpisal vse podatke, ki jih zahteva Uredba (torej seznam podatkov, roke hrambe, zakonito podlago za obdelavo in vse pravice posameznika). 
 
@@ -27,13 +27,13 @@ Za delovanje potrebujemo: Wampserver (32-bitni ali 64-bitni).
 
 *![wamp](https://user-images.githubusercontent.com/39340895/41030763-4fec2602-697f-11e8-9bbe-b4211ddbf92f.png)
 
-* Inštaliramo si Wampserver, link: https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.3_x64.exe/download
+* Inštaliramo si Wampserver, link: `https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.3_x64.exe/download`
 * Pri inštalaciji vzamemo vse privzete nastavitve 
-* Wamp naj bi bil inštaliran v C:/wamp64, v njej najdemo mapo www, kamor skopiramo datoteke iz:https://github.com/MatijaDolzan/Praktikum7/tree/master/Praktikum
+* Wamp naj bi bil inštaliran v C:/wamp64, v njej najdemo mapo www, kamor skopiramo datoteke iz:`https://github.com/MatijaDolzan/Praktikum7/tree/master/Praktikum`
 * Zaženemo wamp, počakamo da se prižgejo vsi servici (apache,php,mysql). V primeru da se eden ne zažene, poskusimo izprazniti morebitne zasedene porte 
-* Testriramo, če je aplikacija zagnana, tako da gremo na: localhost/Praktikum/index.php
-* V browserju zaženemo : localhost/Praktikum/db_init.php, da se baza inicializira
-* Nato zaženemo še: localhost/Praktikum/db_populate.php, da se baza populira
+* Testriramo, če je aplikacija zagnana, tako da gremo na: `localhost/Praktikum/index.php`
+* V browserju zaženemo : `localhost/Praktikum/db_init.php`, da se baza inicializira
+* Nato zaženemo še: `localhost/Praktikum/db_populate.php`, da se baza populira
 * V primeru da katera koli stran vrne error, lahko z localhost/phpmyadmin (v katerega se prijavimo z imenom "root" in brez gesla), kopiramo najprej sql_skripta.txt in nato še populiranje_baze.txt
 * Aplikacija je nato zagnana
 
