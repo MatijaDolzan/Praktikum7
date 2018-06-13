@@ -98,7 +98,7 @@ $chbx10=$arr[9];
 							
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input type="text" name="text" value="<?php echo $NovaV->getText()?>" placeholder="Text: " />
+									<textarea rows="25" cols="70" name="text" placeholder="<?php echo $NovaV->getText()?>" ></textarea>
 								</div>
 							</div>
 							<div class="row uniform 50%">
@@ -218,11 +218,7 @@ $chbx10=$arr[9];
 				
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="copyright">
-						<li>&copy; All rights reserved.</li><li>Praktikum 2</li>
-					</ul>
-				</footer>
+				<?php require 'footer.php';?>
 
 		</div>
 

@@ -85,11 +85,7 @@ if(isset($_SESSION['current_user'])){
 				
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li>
-					</ul>
-				</footer>
+				<?php require 'footer.php';?>
 
 		</div>
 
