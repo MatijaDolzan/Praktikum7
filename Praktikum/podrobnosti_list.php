@@ -39,6 +39,7 @@ include ("check_user.php");
                         $username = "root";
                         $password = "";
                         $dbname = "praktikum";
+                        $currentUser = $_SESSION['current_user'];
                         
                         $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
                         
@@ -46,10 +47,10 @@ include ("check_user.php");
                         
                         <?php 
                         
-                        $query_count = "SELECT pr.naslov AS NASLOV, COUNT(FK_ver_priv) AS STEVILO
-                                        FROM privolitve pr, podpisnik po, verzija v
-                                        WHERE pr.id=v.FK_ver_priv AND v.id=po.FK_pod_ver
-                                        GROUP BY pr.id";
+                        $query_count = "SELECT pr.naslov AS NASLOV, COUNT(po.FK_pod_ver) AS STEVILO
+                                        FROM privolitve pr, podpisnik po
+                                        WHERE pr.FK_priv_upo=$currentUser AND po.FK_pod_ver IN (SELECT ver.id FROM verzija ver WHERE ver.FK_ver_priv IN (SELECT pr.id WHERE pr.FK_priv_upo=$currentUser))
+                                        GROUP BY pr.id;";
                         $result_count = mysqli_query($db_server, $query_count);
                         
                         if (!$result_count)
