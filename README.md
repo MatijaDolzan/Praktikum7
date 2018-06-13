@@ -27,7 +27,8 @@ Za delovanje potrebujemo: Wampserver (32-bitni ali 64-bitni), Eclipse Oxygen.
 
 ![wamp](https://user-images.githubusercontent.com/39340895/41030763-4fec2602-697f-11e8-9bbe-b4211ddbf92f.png)
 
-* Potrebno si je namestiti Wampserver ter ko odpremo phpMyAmdmin je treba ustvariti new database z imenom "praktikum" 
+* Inštaliramo si Wampserver, link: https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.3_x64.exe/download
+* Po namestitvi Wampserver-ja odpremo phpMyAmdmin nato pa ustvarimo new database z imenom "praktikum" 
 * Nato pa v sql zapišemo sledeče:
 ```
 CREATE TABLE Uporabnik(
@@ -108,13 +109,16 @@ INSERT INTO `checkbox`(`id`, `checkbox`, `FK_che_ver`) VALUES (NULL, 'Checkbox 1
 * Nato določimo workspace za mapo našega php projekta in sicer tukaj, če imamo 32-bitni wamp: C:\wamp\www\ ALI C:\wamp64\www\ v primeru, da imamo 64-bitni Wamp
 * V Eclipse moramo vključiti tole: https://marketplace.eclipse.org/content/php-development-tools na tem linku najdemo gumb Install in le tega povlečemo v naš Eclipse
 * Ustvarimo nov PHP Project. Ime našega php projekta je: Praktikum
-* nato pa v to mapo noter prekopiramo kodo, ki je na githubu u mapi Praktikum
+* nato pa v to mapo noter prekopiramo kodo, ki je na githubu v mapi Praktikum
 * ko smo to naredili, v Eclipsu na mapi: GoogleAPI in tcpdf stisnemo desni klik
 ![oznaceni knjiznici](https://user-images.githubusercontent.com/39340895/41307123-97febc40-6e78-11e8-9000-327c6c3c3109.png)
 
 * nato pa stisnemo *Use as Library Folder* - to je zelo pomembno, drugače ne bo delovalo
 ![oznaceni knjiznici -oznaci kot](https://user-images.githubusercontent.com/39340895/41307269-01199b00-6e79-11e8-982a-3d4c23cb55d2.png)
 
+* nato, ko imamo celotno kodo v mapi, stisnemo desni klik na datoteki index.php in stisnemo:
+![index](https://user-images.githubusercontent.com/39340895/41349142-365e9216-6f0f-11e8-91c1-7e8974196fea.png)
+-> najbolje je sicer da v Google Chrome kopiramo tale link: http://localhost/Praktikum/index.php 
 
 ### AVTORJI:
 * Dolžan Matija 
