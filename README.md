@@ -24,11 +24,12 @@ Bonus: Zavarovanje dokazov o privolitvi v verigi blokov
 
 ## Navodila za namestitev
 Za delovanje potrebujemo: Wampserver (32-bitni ali 64-bitni).
-![wamp](https://user-images.githubusercontent.com/39340895/41030763-4fec2602-697f-11e8-9bbe-b4211ddbf92f.png)
+
+*![wamp](https://user-images.githubusercontent.com/39340895/41030763-4fec2602-697f-11e8-9bbe-b4211ddbf92f.png)
 
 * Inštaliramo si Wampserver, link: https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.3_x64.exe/download
 * pri inštalaciji vzamemo vse privzete nastavitve 
-* wamp naj bi bil inštaliran v C:/wamp64, v njej najdemo mapo www, kamor skopiramo datoteke iz:
+* wamp naj bi bil inštaliran v C:/wamp64, v njej najdemo mapo www, kamor skopiramo datoteke iz:https://github.com/MatijaDolzan/Praktikum7/tree/master/Praktikum
 * zaženemo wamp, počakamo da se prižgejo vsi servici (apache,php,mysql). V primeru da se eden ne zažene, poskusimo izprazniti morebitne zasedene porte 
 * testriramo, če je aplikacija zagnana, tako da gremo na: localhost/Praktikum/index.php
 * v browserju zaženemo : localhost/Praktikum/db_init.php, da se baza inicializira
