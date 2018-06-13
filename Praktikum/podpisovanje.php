@@ -169,7 +169,7 @@ require    'razredi\Checkboxi.php';
                                 ?>
                                 
                                 	<form method="post" action="podpisovanje_worker.php">
-                                	<table>
+
                                 	Naslov privolitve: <?php echo $privolitev->getNaslov() ?><br>
                                 	Besedilo privolitve: <?php echo $verzija->getText() ?><br>
                                 	Podatki se hranijo:<?php echo $verzija->getHramba() ?><br>
@@ -292,7 +292,7 @@ require    'razredi\Checkboxi.php';
                                 <input type="hidden" name="email" value="<?php echo $_GET['email'];?>">
                                 <input type="hidden" name="verzija" value="<?php echo $_GET['verzija'];?>">
                                 <input type="submit" action="" name="" value="Podpisujem privolitev">
-                                </table>
+
                                 </form>
                                 
                                 <!-- REDIRECT ZA PODPIS MLADOLETNIH OSEB -->
