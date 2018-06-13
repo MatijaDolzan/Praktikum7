@@ -1,21 +1,6 @@
 # Zbiranje privolitev po GDPR
-*Praktikum II, projekt*
-
-Po novi Splošni uredbi o varstvu podatkov morajo upravljavci osebnih podatkov (tisti, ki zbirajo in obdelujejo podatke) posameznika seznaniti o tem katere podatke zbirajo, kako dolgo, na kakšni podlagi (za podlago glejte 1. odstavek člena 6 v `http://eur-lex.europa.eu/legal-content/SL/TXT/HTML/?uri=CELEX:32016R0679&from=SL)` in zbirati dokaze, da so posamezniki privolitev dali.
-
-Pripravite portal, ki bo omogočal enostavno zbiranje privolitev. Omogočati mora, da uporabnik vpiše besedilo (pogoje) obdelave podatkov. Uporabnika naj portal vzpodbuja k temu, da bo vpisal vse podatke, ki jih zahteva Uredba (torej seznam podatkov, roke hrambe, zakonito podlago za obdelavo in vse pravice posameznika). 
-
-Uporabnik lahko določi katere podatke bo zbiral v privolitvi (obvezno vsaj naslov elektronske pošte,  poljubno število vnosnih polj za vpis besedila, poljubno število kljukic – checkbox). Spremembe nastavitev morajo biti verzionirane, da bo mogoče kasneje ugotoviti kaj je videl uporabnik, ko je dal privolitev. Portal naj ob zbiranju privolitve zabeleži IP naslov uporabnika ter čas privolitve. 
-
-Portal mora omogočati analizo privolitev (kdaj in koliko je bilo danih) ter iskanje privolitev. Če torej nekdo trdi, da privolitve ni dal, mora biti mogoče po njegovem elektronskem naslovu poiskati kdaj je dal privolitev in iz katerega IP naslova ter kakšni podatki so mu bili takrat prikazani. 
-
-Če posameznik označi, da je otrok, potem ga preusmerite na portal za zbiranje izrecne privolitve po GDPR (glejte naslednji projekt).
-
-Vsak uporabnik, ki daje privolitev, si lahko pogoje privolitve shrani kot PDF datoteko. Vsak uporabnik 
-pa lahko vse dokaze o privolitvi izvozi kot PDF datoteko.
-
-Bonus: Zavarovanje dokazov o privolitvi v verigi blokov
-
+#Uporaba
+Namen aplikacije je, da si uporabniki(podjetja) sestavljajo GDPR privolitve o zbiranju podatkov. Omogoča, da se vsa privolitev verzionizira. Ta privolitev lahko dobi povezavo, do katere ga pelje uradna stran podjetja. Privolilec lahko nato označi, š čim se v določeni privolitvi strinja in s čim ne. Svojo privolitev lahko nato natisne. Uporabnikom omogočamo iskanje privolilcev po njihovih elektronskih naslovih, zatem pa lahko še natiska takratno verzijo privolitve.
 
 ## E-R diagram
 ![e-r_diagram](https://user-images.githubusercontent.com/39340999/41291519-3752d570-6e50-11e8-8542-7def768cebc5.png)
