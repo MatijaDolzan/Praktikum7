@@ -1,6 +1,14 @@
 # Zbiranje privolitev po GDPR
-#Uporaba
-Namen aplikacije je, da si uporabniki(podjetja) sestavljajo GDPR privolitve o zbiranju podatkov. Omogoča, da se vsa privolitev verzionizira. Ta privolitev lahko dobi povezavo, do katere ga pelje uradna stran podjetja. Privolilec lahko nato označi, š čim se v določeni privolitvi strinja in s čim ne. Svojo privolitev lahko nato natisne. Uporabnikom omogočamo iskanje privolilcev po njihovih elektronskih naslovih, zatem pa lahko še natiska takratno verzijo privolitve.
+# Uporaba
+Namen aplikacije je, da si uporabniki(podjetja) sestavljajo GDPR privolitve o zbiranju podatkov. Omogoča, da se vsa privolitev verzionizira. Ta privolitev lahko dobi povezavo, do katere ga pelje uradna stran podjetja. Privolilec lahko nato označi, š čim se v določeni privolitvi strinja in s čim ne. Svojo privolitev lahko nato natisne. Uporabnikom omogočamo iskanje privolilcev po njihovih elektronskih naslovih, zatem pa lahko še natiska takratno verzijo privolitve. Od dejanskega privolilca, hranimo le email, čas podpisa določene privolitve in IP naslov, iz katerega privolilec podpisal.
+
+# Glavne funkcionalnosti
+* Dodajanje privolitve
+* Verzioniranje
+* Spreminjanje verzij
+* Izvažanja v PDF
+* Iskanje privolilcev
+* Dodajanje in spreminjanje pooblaščencev in upravljalcev privolitve
 
 ## E-R diagram
 ![e-r_diagram](https://user-images.githubusercontent.com/39340999/41291519-3752d570-6e50-11e8-8542-7def768cebc5.png)
