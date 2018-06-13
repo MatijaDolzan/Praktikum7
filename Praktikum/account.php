@@ -80,7 +80,7 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
 							
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input hidden="true" type="text" value="email" name="edit">
+									<input type="hidden" value="email" name="edit">
 								</div>
 							</div>
 							<div class="row uniform 50%">
@@ -111,7 +111,7 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
                         <form method="post" action="account.php">
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input hidden="true" type="text" value="email" name="edit">
+									<input type="hidden" value="email" name="edit">
 								</div>
 							</div>
 							
@@ -130,7 +130,7 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
                         }
                         ?>
 						
-						<h3>Trenutno uporabni≈°ko ime:</h3>
+						<h3>Trenutno uporabniöko ime:</h3>
 						<?php
                         //VREDNOST UPORABNIKOVEGA USERNAME-A
                         echo $current_user->getUsername() . "<br>";
@@ -145,7 +145,7 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
                         <form method="post" action="account_worker.php">
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input hidden="true" type="text" value="username" name="edit">
+									<input type="hidden" value="username" name="edit">
 								</div>
 							</div>
 							<div class="row uniform 50%">
@@ -172,7 +172,7 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
                         <form method="post" action="account.php">
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input hidden="true" type="text" value="username" name="edit">
+									<input type="hidden" value="username" name="edit">
 								</div>
 							</div>
 							
@@ -205,7 +205,7 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
                         <form method="post" action="account_worker.php">
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input hidden="true" type="text" value="password" name="edit">
+									<input type="hidden" value="password" name="edit">
 								</div>
 							</div>
 							<div class="row uniform 50%">
@@ -232,7 +232,7 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
                         <form method="post" action="account.php">
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input hidden="true" type="text" value="password" name="edit">
+									<input type="hidden" value="password" name="edit">
 								</div>
 							</div>
 							
