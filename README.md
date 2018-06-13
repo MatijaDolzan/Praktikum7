@@ -28,18 +28,18 @@ Za delovanje potrebujemo: Wampserver (32-bitni ali 64-bitni).
 *![wamp](https://user-images.githubusercontent.com/39340895/41030763-4fec2602-697f-11e8-9bbe-b4211ddbf92f.png)
 
 * Inštaliramo si Wampserver, link: https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.3_x64.exe/download
-* pri inštalaciji vzamemo vse privzete nastavitve 
-* wamp naj bi bil inštaliran v C:/wamp64, v njej najdemo mapo www, kamor skopiramo datoteke iz:https://github.com/MatijaDolzan/Praktikum7/tree/master/Praktikum
-* zaženemo wamp, počakamo da se prižgejo vsi servici (apache,php,mysql). V primeru da se eden ne zažene, poskusimo izprazniti morebitne zasedene porte 
-* testriramo, če je aplikacija zagnana, tako da gremo na: localhost/Praktikum/index.php
-* v browserju zaženemo : localhost/Praktikum/db_init.php, da se baza inicializira
-* nato zaženemo še: localhost/Praktikum/db_populate.php, da se baza populira
-* v primeru da katera koli stran vrne error, lahko z localhost/phpmyadmin (v katerega se prijavimo z imenom "root" in brez gesla), kopiramo najprej sql_skripta.txt in nato še populiranje_baze.txt
-* aplikacija je nato zagnana
+* Pri inštalaciji vzamemo vse privzete nastavitve 
+* Wamp naj bi bil inštaliran v C:/wamp64, v njej najdemo mapo www, kamor skopiramo datoteke iz:https://github.com/MatijaDolzan/Praktikum7/tree/master/Praktikum
+* Zaženemo wamp, počakamo da se prižgejo vsi servici (apache,php,mysql). V primeru da se eden ne zažene, poskusimo izprazniti morebitne zasedene porte 
+* Testriramo, če je aplikacija zagnana, tako da gremo na: localhost/Praktikum/index.php
+* V browserju zaženemo : localhost/Praktikum/db_init.php, da se baza inicializira
+* Nato zaženemo še: localhost/Praktikum/db_populate.php, da se baza populira
+* V primeru da katera koli stran vrne error, lahko z localhost/phpmyadmin (v katerega se prijavimo z imenom "root" in brez gesla), kopiramo najprej sql_skripta.txt in nato še populiranje_baze.txt
+* Aplikacija je nato zagnana
 
 
 ### AVTORJI:
-* Dolžan Matija 
+* Dolžan Matija/Monomaxos 
 * Ekart Laura
 * Bencek Petra
 * Brod Matic
