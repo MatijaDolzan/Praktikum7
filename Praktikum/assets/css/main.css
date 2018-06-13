@@ -2082,7 +2082,10 @@
 	textarea {
 		padding: 0.75em 1em;
 	}
-
+	input[type="checkbox"]
+	{
+  	-webkit-appearance:checkbox;
+	}
 	input[type="radio"] {
 		-moz-appearance: none;
 		-webkit-appearance: none;
