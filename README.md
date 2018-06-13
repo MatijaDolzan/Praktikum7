@@ -23,7 +23,7 @@ Za delovanje potrebujemo: Wampserver (32-bitni ali 64-bitni).
 
 * Namestimo si Wampserver, link: `https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.3_x64.exe/download`
 * Pri namestitvi vzamemo vse privzete nastavitve 
-* Wamp naj bi bil nameščen v C:/wamp64, v njej najdemo mapo www, kamor skopiramo datoteke iz:`https://github.com/MatijaDolzan/Praktikum7/tree/master/Praktikum`
+* Wamp naj bi bil nameščen v C:/wamp64, v njej najdemo mapo www, kamor skopiramo celotno mapo Praktikum iz:`https://github.com/MatijaDolzan/Praktikum7` repozitorija.
 * Zaženemo wamp, počakamo da se prižgejo vsi servici (apache,php,mysql). V primeru da se eden ne zažene, poskusimo izprazniti morebitne zasedene porte 
 * Testriramo, če je aplikacija zagnana, tako da gremo na: `localhost/Praktikum/index.php`
 * V browserju zaženemo : `localhost/Praktikum/db_init.php`, da se baza inicializira
