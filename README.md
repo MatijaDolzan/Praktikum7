@@ -9,6 +9,7 @@ Namen aplikacije je, da si uporabniki(podjetja) sestavljajo GDPR privolitve o zb
 * Izvažanja v PDF
 * Iskanje privolilcev
 * Dodajanje in spreminjanje pooblaščencev in upravljalcev privolitve
+* Prijava z Googlovim računom
 
 ## E-R diagram
 ![e-r_diagram](https://user-images.githubusercontent.com/39340999/41291519-3752d570-6e50-11e8-8542-7def768cebc5.png)
