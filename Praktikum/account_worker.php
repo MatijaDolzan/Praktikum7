@@ -1,7 +1,7 @@
 <?php
-if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_POST['edit'])) && (isset($_SESSION['current_edit']))) {
+session_start();
+if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_SESSION['current_edit']))) {
     
-    session_start();
     require 'razredi/Uporabnik.php';
     
     $edited_var = null;

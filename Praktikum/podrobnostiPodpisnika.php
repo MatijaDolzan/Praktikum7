@@ -78,7 +78,15 @@ require 'check_user.php';
         						
         						?>
         						
-        						<a href="podrobnostiVerzije_worker.php?id=<?php $verzija->getId();?>">Pregled verzije</a>
+        						<form action="podrobnostiVerzije_worker.php" method="post">
+                                <input type="hidden" name="id" value="<?php echo $verzija->getId();?>" />
+                                <input class="button special fit" type="submit" value="Pregled verzije" />
+                                </form>
+                                
+                                <form action="export.php" method="post">
+                                <input type="hidden" name="export_id_podp" value="<?php echo $podpisnik->getId();?>" />
+                                <input class="button special fit" type="submit" value="Izvozi v PDF" />
+                                </form>
 
     						</section>   
 					</div>

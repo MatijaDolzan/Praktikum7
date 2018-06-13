@@ -3,18 +3,22 @@ include ("header.php");
 include 'check_user.php';
 require 'razredi/Uporabnik.php';
 
+if((isset($_SESSION['current_edit'])) && !(isset($_POST['edit']))){
+    unset($_SESSION['current_edit']);
+}
+
 if(isset($_POST['edit'])){
     
     if($_POST['edit'] === 'email'){
         
         $_SESSION['current_edit'] = "email";
-
+        
     }else if ($_POST['edit'] === 'username'){
-
+        
         $_SESSION['current_edit'] = "username";
-
+        
     }else if ($_POST['edit'] === 'password'){
-
+        
         $_SESSION['current_edit'] = "password";
         
     }else{
@@ -58,6 +62,11 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
 						<?php
                         //VREDNOST UPORABNIKOVEGA EMAILA
                         echo $current_user->getEmail() . "<br>";
+                        ?>
+                        
+                        <?php //CHECK ZA GOOGLE ACCOUNT?>
+                        <?php 
+                        if($gUser === FALSE){
                         ?>
                         
                         
@@ -115,6 +124,11 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
 							</div>
 						</form>
 						
+						<?php 
+                        }else{
+                            echo "Google Accounts cannot change their E-Mail adress manually. If you wish to do so - please contact our <a href='support.php'>Support Department</a>";
+                        }
+                        ?>
 						
 						<h3>Trenutno uporabniško ime:</h3>
 						<?php
@@ -169,7 +183,13 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
 									</ul>
 								</div>
 							</div>
-						</form>						
+						</form>	
+						
+						<?php //CHECK ZA GOOGLE ACCOUNT?>
+                        <?php 
+                        if($gUser === FALSE){
+                        ?>
+											
 						
 						<h3>Geslo</h3>
 						<?php
@@ -179,7 +199,7 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
                         <?php //FORMA ZA SPREMINJANJE PASSWORD-A ?>
                         
                         <?php
-                        if((isset($_SESSION['current_edit'])) && ($_SESSION['current_edit'] === "username")){
+                        if((isset($_SESSION['current_edit'])) && ($_SESSION['current_edit'] === "password")){
                         ?>
                         
                         <form method="post" action="account_worker.php">
@@ -224,6 +244,9 @@ $current_user = $current_user->getUporabnikViaId($_SESSION['current_user']);
 								</div>
 							</div>
 						</form>
+						<?php 
+                        }
+                        ?>
 						
 						<?php if(isset($_SESSION['account_error'])){
                         ?>

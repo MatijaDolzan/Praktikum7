@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once "GoogleAPI/vendor/autoload.php";
 $gClient = new Google_Client();
 $gClient->setClientId("952829974424-opa1gcjlqkjrmj2guq65f5o789g2ihj3.apps.googleusercontent.com");

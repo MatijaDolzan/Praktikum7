@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 require_once "config.php";
 
@@ -15,4 +15,5 @@ if(isset($_SESSION['gLogout'])){
     header("Location: https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost/Praktikum/google_login_preset.php");
     exit();
     
-}?>
+}
+?>
