@@ -170,9 +170,9 @@ require    'razredi\Checkboxi.php';
                                 
                                 	<form method="post" action="podpisovanje_worker.php">
                                 	<table>
-                                	Naslov: <?php echo $privolitev->getNaslov() ?><br>
-                                	Text: <?php echo $verzija->getText() ?><br>
-                                	Hramba:<?php echo $verzija->getHramba() ?><br>
+                                	Naslov privolitve: <?php echo $privolitev->getNaslov() ?><br>
+                                	Besedilo privolitve: <?php echo $verzija->getText() ?><br>
+                                	Podatki se hranijo:<?php echo $verzija->getHramba() ?><br>
                                 
                                 <?php
                                 if ($stevec!=0){
