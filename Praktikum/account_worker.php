@@ -37,7 +37,7 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_SESSION['current_edit'])))
     $var = $current_user->updateUporabnik($_SESSION['current_user'], $edited_var, $edited_var_value);
     
     if($var){
-
+        
         unset($_SESSION['current_edit']);
         header("Location: account.php");
         exit();
@@ -49,7 +49,7 @@ if(($_SERVER["REQUEST_METHOD"] == "POST") && (isset($_SESSION['current_edit'])))
         exit();
         
     }
-   
+    
 }else{
     //Change to redirect to index/account? - possibly with a "Whoops! What happened there?" alert
     $_SESSION['error'] = "Invalid Request Method [account_worker]";
