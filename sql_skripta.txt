@@ -1,3 +1,5 @@
+CREATE DATABASE 'praktikum';
+USE 'praktikum';
 CREATE TABLE Uporabnik(
     id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     username varchar(255) NOT NULL,
