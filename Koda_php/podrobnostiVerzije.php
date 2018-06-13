@@ -1,11 +1,4 @@
 <?php
-session_start();
-
-//echo $_SESSION["izbranaVerzijaSes"];
-?>
-
-<p>
-<?php
 require    'razredi\Privolitev.php';
 require    'razredi\Verzija.php';
 require    'razredi\Pooblascenec.php';
@@ -14,6 +7,7 @@ require    'razredi\Checkboxi.php';
 
 require 'menu.php';
 
+$idVerz=0;
 if(!empty($_SESSION['izbranaVerzijaSes'])){
    $idVerz=$_SESSION['izbranaVerzijaSes'];
   
@@ -31,7 +25,6 @@ $version = new Verzija(null, null);
 $poob = new Pooblascenec(null, null, null);
 $upra = new Upravljalec(null, null, null, null);
 $check = new Checkbox(null, null, null);
-
 $current_version = $version->getIzBazeV($verzija_id);
 $poob_id = $current_version->getPoob();
 $privolitev_id = $current_version->getFK_ver_priv();
