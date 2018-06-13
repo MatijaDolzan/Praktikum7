@@ -33,17 +33,19 @@ include ("check_user.php");
                         $username = "root";
                         $password = "";
                         $dbname = "praktikum";
-                          
+                        $currentUser = $_SESSION['current_user'];  
+                        
+                        
                         $db_server = @mysqli_connect ($servername, $username, $password, $dbname) OR die ('Povezava do podatkovne baze ni uspela: ' . mysqli_connect_error() );
                         
                         ?>
                         	
                         <?php
                         
-                        $query = "SELECT upravljalec.ime, upravljalec.priimek, privolitve.naslov, verzija.verzija 
-                                    FROM upravljalec, privolitve, verzija 
-                                    WHERE upravljalec.FK_upr_priv=privolitve.id 
-                                    AND privolitve.id=verzija.FK_ver_priv";
+                        $query = "SELECT DISTINCT upravljalec.ime, upravljalec.priimek, upravljalec.naslov, privolitve.naslov 
+                                    from upravljalec, privolitve, uporabnik 
+                                    WHERE upravljalec.fk_upr_priv=privolitve.id 
+                                    and privolitve.fk_priv_upo=$currentUser";
                         
                         $result = mysqli_query($db_server, $query);
                         
@@ -57,14 +59,7 @@ include ("check_user.php");
                         	if($st_vrstic > 0) 
                         		print('');
                         }
-                        
-                        for ($j = 0 ; $j < $st_vrstic ; ++$j)
-                        {
-                        	$vrstica = mysqli_fetch_row($result); ?>
-                        	
-                        	<?php
-                        }
-                         
+
                         ?>	
                         
             <!-- Table -->
@@ -76,12 +71,18 @@ include ("check_user.php");
     										<tr>
                                                   <th>Ime upravljalca</th>
                                                   <th>Priimek</th>
-                                                  <th>Naslov privolitve</th>
                                                   <th>Verzija</th>
+                                                  <th>Naslov privolitve</th>
+                                                  
                                                     	
                                              </tr>
     									</thead>
-    									
+    									<?php                         
+                        for ($j = 0 ; $j < $st_vrstic ; ++$j)
+                        {
+                        	$vrstica = mysqli_fetch_row($result); 
+
+                         ?>
     									<tbody>
     										 <tr>
                                                 <td><?php echo $vrstica[0] ?></td>
@@ -91,6 +92,7 @@ include ("check_user.php");
                                               </tr>
     												
     									</tbody>
+    									<?php                         } ?>
     								</table>
     						</div>
     					</section>
