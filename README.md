@@ -28,7 +28,7 @@ Za delovanje potrebujemo: Wampserver (32-bitni ali 64-bitni), Eclipse Oxygen.
 ![wamp](https://user-images.githubusercontent.com/39340895/41030763-4fec2602-697f-11e8-9bbe-b4211ddbf92f.png)
 
 * Inštaliramo si Wampserver, link: https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.3_x64.exe/download
- najbolje je sicer da v Google Chrome kopiramo tale link: http://localhost/Praktikum/index.php 
+* najbolje je sicer da v Google Chrome kopiramo tale link: http://localhost/Praktikum/index.php 
 
 ### AVTORJI:
 * Dolžan Matija 
