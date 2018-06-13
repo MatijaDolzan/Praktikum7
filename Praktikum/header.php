@@ -24,7 +24,7 @@ header('Content-type', 'text/html; charset=UTF-8');
 										</ul>
 									</li>
 									<li><a href="seznam_upravljavcev.php">Upravljalci</a></li>
-									<li><a href="splosni_pogoji.php">Splosni pogoji</a></li>
+									<!-- <li><a href="splosni_pogoji.php">Splosni pogoji</a></li>-->
 								</ul>
 							</li>
 							
@@ -46,4 +46,5 @@ header('Content-type', 'text/html; charset=UTF-8');
 						</ul>
 					</nav>
 				</header>
+
 

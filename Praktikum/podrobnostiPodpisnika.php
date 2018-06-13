@@ -30,7 +30,7 @@ require 'check_user.php';
             <!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2>Podrobnosti verzije</h2>
+						<h2>Podrobnosti podpisnika</h2>
 					</header>
 					
 					<div class="row">
@@ -94,11 +94,7 @@ require 'check_user.php';
 			</section>
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li>
-					</ul>
-				</footer>
+				<?php require 'footer.php';?>
 
 		</div>
 

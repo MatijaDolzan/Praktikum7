@@ -34,6 +34,8 @@ $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 $pdf->SetFont('times', '', 12);
 
 
+
+//IZPIS PRIVOLITVE
 if(isset($_POST['export_id_verz'])){
 //ADD PAGE 1
 $pdf->AddPage();
@@ -69,7 +71,7 @@ $html ='<br><div style="text-align:center"><h1>' . $privolitev_naslov . '</h1></
         <p><b>Priimek upravljalca: </b>' . $upravljalec_surname . '
         <p><b>Naslov upravljalca: </b>' . $upravljalec_address;
 
-if($poob_id !== NULL){
+if(($poob_id !== NULL) && ($poob_id !== "0")){
     
     $current_poob = $poob->getIzBazePoob($poob_id);
     $pooblascenec_name = $current_poob->getIme();
@@ -113,6 +115,11 @@ if (count($checkboxes) === 0){
 
     $pdf->lastPage();
 }
+//KONEC IZPISA PRIVOLITVE
+
+
+
+//IZPIS PODPISNIKA
 }else if(isset($_POST['export_id_podp'])){
     
     $podpisnik = $_SESSION['podpisnik'];
@@ -158,6 +165,9 @@ if (count($checkboxes) === 0){
     $pdf->writeHTML($html, true, false, true, false, '');
     
     $pdf->lastPage();
+    //KONEC IZPISA PODPISNIKA
+    
+    
     
 }else{
     header("Location: index.php");

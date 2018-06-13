@@ -218,11 +218,7 @@ $chbx10=$arr[9];
 				
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="copyright">
-						<li>&copy; All rights reserved.</li><li>Praktikum 2</li>
-					</ul>
-				</footer>
+				<?php require 'footer.php';?>
 
 		</div>
 

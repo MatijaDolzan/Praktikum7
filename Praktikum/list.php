@@ -29,10 +29,7 @@ if (isset($_SESSION['idPrivolitve'])){
 						<h2>Seznam privolitev</h2>
 					</header>
 					
-					<div class="row">
-						<div class="12u">
-
-							<?php
+					<?php
 
                             require 'db_connection.php';
                               
@@ -57,7 +54,10 @@ if (isset($_SESSION['idPrivolitve'])){
                             }
                             
                             ?>
-							<!-- Table -->
+                            
+					<div class="row">
+						<div class="12u">
+						<!-- Table -->
 								<section class="box">
 
 									<div class="table-wrapper">
@@ -119,11 +119,7 @@ if (isset($_SESSION['idPrivolitve'])){
 				</section>
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li>
-					</ul>
-				</footer>
+				<?php require 'footer.php';?>
 
 		</div>
 

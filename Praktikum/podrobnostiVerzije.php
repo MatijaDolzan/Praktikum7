@@ -10,6 +10,7 @@ require    'razredi\Pooblascenec.php';
 require    'razredi\Upravljalec.php';
 require    'razredi\Checkboxi.php';
 
+$idVerz=0;
 if(!empty($_SESSION['izbranaVerzijaSes'])){
     $idVerz=$_SESSION['izbranaVerzijaSes'];
     
@@ -50,7 +51,6 @@ if(!empty($_SESSION['izbranaVerzijaSes'])){
                             $poob = new Pooblascenec(null, null, null);
                             $upra = new Upravljalec(null, null, null, null);
                             $check = new Checkbox(null, null, null);
-                            
                             $current_version = $version->getIzBazeV($verzija_id);
                             $poob_id = $current_version->getPoob();
                             $privolitev_id = $current_version->getFK_ver_priv();
@@ -121,11 +121,7 @@ if(!empty($_SESSION['izbranaVerzijaSes'])){
 			</section>
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li>
-					</ul>
-				</footer>
+				<?php require 'footer.php';?>
 
 		</div>
 

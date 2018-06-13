@@ -98,7 +98,7 @@ include ("check_user.php");
 											</tbody>
 										</table>
 
-                                  		<form action="podrobnosti_list.php" method="post">
+                                  		<form action="list.php" method="post">
                                   			<div class="row uniform 50%">
                 								<div class="12u">
                 									<input type="submit" name="podrPriv" value="Nazaj" class="button special fit">
@@ -112,11 +112,7 @@ include ("check_user.php");
 				</section>
 
 			<!-- Footer -->
-				<footer id="footer">
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li>
-					</ul>
-				</footer>
+				<?php require 'footer.php';?>
 
 		</div>
 
